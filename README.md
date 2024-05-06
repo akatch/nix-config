@@ -4,6 +4,22 @@ hacker shit
 
 inspired by [the-nix-way/nome][], [anthr76/snowflake][], and [coreweave/coreweave.nix][].
 
+## Setup
+
+### NixOS
+
+Stub out a template flake
+```shell
+nix flake init -t github:misterio77/nix-starter-config#minimal
+```
+
+Edit some stuff in flake.nix etc, then
+
+```shell
+sudo nixos-rebuild switch --flake .#hostname
+home-manager switch --flake .#$(whoami)@$(hostname)
+```
+
 ## Tips 'n' Tricks
 
 ### Run arbitrary packages in a sandboxed `nix-shell`

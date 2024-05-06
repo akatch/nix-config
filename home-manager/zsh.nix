@@ -43,6 +43,14 @@
 
     initExtra =
       ''
+      h() {
+          history | grep --color=auto $1
+      }
+
+      ghclone() {
+          git clone git@github.com:$1 ~/code/github.com/$1
+      }
+
       export LESS_TERMCAP_mb=$'\e[38;5;24m'
       export LESS_TERMCAP_md=$'\e[01;38;5;28m'
       export LESS_TERMCAP_so=$'\e[38;5;214m'

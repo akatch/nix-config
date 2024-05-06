@@ -41,17 +41,6 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "video" ];
     shell = "/run/current-system/sw/bin/zsh";
-    packages = with pkgs; [
-      firefox
-      git
-      tmux
-      alacritty
-      jq
-      dunst
-      syncthing
-      i3status
-      brightnessctl
-    ];
   };
 
   environment.systemPackages = with pkgs; [

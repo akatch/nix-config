@@ -6,13 +6,19 @@
   ...
 }: {
   imports = [
+    # cli
     ./git.nix
-#    ./k9s.nix
     ./tmux.nix
-#    ./vim.nix
+    #./vim.nix
     ./zsh.nix
-    ./dunst.nix
     ./direnv.nix
+
+    # k8s
+    #./k9s.nix
+
+    # gui
+    ./dunst.nix
+    ./i3status.nix
   ];
 
   nixpkgs = {
@@ -23,7 +29,6 @@
   };
 
   home = {
-    # TODO set per-host
     username = "al";
     homeDirectory = "/home/al";
     sessionVariables = {
@@ -42,14 +47,18 @@
       VISUAL = "$EDITOR";
     };
     packages = with pkgs; [
-      #terminus_font
+      # cli
       jq
       yq
-      signal-desktop
       fortune
+      #terminus_font
+
+      # gui
+      signal-desktop
       firefox
       syncthing
-      i3status
+
+      # laptop
       brightnessctl
     ];
   };

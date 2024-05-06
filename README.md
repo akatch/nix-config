@@ -22,6 +22,20 @@ home-manager switch --flake .#$(whoami)@$(hostname)
 
 ## Tips 'n' Tricks
 
+### Add unstable channel
+
+```shell
+nix-channel --add https://channels.nixos.org/nixpkgs-unstable nixpkgs
+nix-channel --update
+```
+
+### Upgrading packages
+
+```shell
+nix flake update
+home-manager switch --flake .#$(whoami)@$(hostname)
+```
+
 ### Run arbitrary packages in a sandboxed `nix-shell`
 
 ```shell

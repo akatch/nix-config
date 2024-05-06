@@ -27,9 +27,10 @@
       "e" = "vim -p";
       "g" = "git";
       "gr" = "grep -r";
-      # FIXME -G is macos, --color is linux
+      "hms" = "home-manager switch --flake .#$(whoami)@$(hostname)";
       "l" = "ls -lhG";
       "lah" = "ls -lahG";
+      "nrs" = "sudo nixos-rebuild switch";
       "se" = "sudo -e";
       "ta" = "tmux attach -t";
     };
@@ -49,6 +50,8 @@
       export LESS_TERMCAP_ue=$'\e[0m'
       export LESS_TERMCAP_me=$'\e[0m'
       export LESS_TERMCAP_se=$'\e[0m'
+      export PS1="%F{237}%m%f %F{%(?.64.208)}%~%f %F{%(?.64.208)}%#%f "
+      fortune
       '';
   };
 }

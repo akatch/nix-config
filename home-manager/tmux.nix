@@ -22,6 +22,7 @@
         set -g visual-bell off
         set -g repeat-time 200
         set -g mouse on
+        set -g default-terminal "tmux-256color"
 
         set -g mode-style fg=colour214
         set -g pane-border-style fg=colour234
@@ -64,6 +65,7 @@
         set -g status-left-length 50
         set -g status-right-length 150
         set -g status-left "#S@#H #W"
+        set -g status-right ""
       '';
   };
 }

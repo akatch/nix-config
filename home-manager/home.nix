@@ -19,6 +19,7 @@
     # gui
     ./dunst.nix
     ./i3status.nix
+    ./swaylock.nix
   ];
 
   nixpkgs = {

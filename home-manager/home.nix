@@ -12,6 +12,7 @@
 #    ./vim.nix
     ./zsh.nix
     ./dunst.nix
+    ./direnv.nix
   ];
 
   nixpkgs = {
@@ -55,7 +56,6 @@
 
   programs.home-manager.enable = true;
   programs.alacritty.enable = true;
-  #programs.sway.enable = true;
   #programs.fzf.enable = true;
 
   # Nicely reload system units when changing configs

@@ -11,6 +11,7 @@
     ./tmux.nix
 #    ./vim.nix
     ./zsh.nix
+    ./dunst.nix
   ];
 
   nixpkgs = {
@@ -46,7 +47,6 @@
       signal-desktop
       fortune
       firefox
-      dunst
       syncthing
       i3status
       brightnessctl

@@ -19,9 +19,8 @@
     inherit (self) outputs;
   in {
     # NixOS configuration entrypoint
-    # Available through 'nixos-rebuild --flake .#your-hostname'
+    # `nixos-rebuild --flake .#$(hostname)`
     nixosConfigurations = {
-      # FIXME replace with your hostname
       europa = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         # > Our main nixos configuration file <
@@ -30,13 +29,11 @@
     };
 
     # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#your-username@your-hostname'
+    # `home-manager switch --flake .#$(whoami)@$(hostname)`
     homeConfigurations = {
-      # FIXME replace with your username@hostname
       "al@europa" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
-        # > Our main home-manager configuration file <
         modules = [
           ./home-manager/home.nix
         ];

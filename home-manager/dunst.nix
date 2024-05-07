@@ -31,7 +31,7 @@
         dmenu = "dmenu -p dunst:";
         browser = "firefox -new-tab";
         min_icon_size = 50;
-        max_icon_size = 200;
+        max_icon_size = 125;
         icon_position = "left";
         #icon_path = /usr/share/icons/Adwaita/scalable/status/:/usr/share/icons/Adwaita/scalable/actions/;
         frame_width = 1;

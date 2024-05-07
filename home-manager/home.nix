@@ -7,11 +7,11 @@
 }: {
   imports = [
     # cli
+    ./direnv.nix
     ./git.nix
     ./tmux.nix
     #./vim.nix
     ./zsh.nix
-    ./direnv.nix
 
     # k8s
     #./k9s.nix
@@ -51,14 +51,13 @@
     };
     packages = with pkgs; [
       # cli
+      fortune
       jq
       yq
-      fortune
-      #terminus_font
 
       # gui
-      signal-desktop
       firefox
+      signal-desktop
       syncthing
 
       # laptop
@@ -67,7 +66,6 @@
   };
 
   programs.home-manager.enable = true;
-  #programs.fzf.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

@@ -17,6 +17,7 @@
     #./k9s.nix
 
     # gui
+    ./alacritty.nix
     ./dunst.nix
     ./i3status.nix
     ./swayidle.nix
@@ -66,7 +67,6 @@
   };
 
   programs.home-manager.enable = true;
-  programs.alacritty.enable = true;
   #programs.fzf.enable = true;
 
   # Nicely reload system units when changing configs

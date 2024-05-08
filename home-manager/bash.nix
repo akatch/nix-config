@@ -42,7 +42,7 @@
       export LESS_TERMCAP_me=$'\e[0m'
       export LESS_TERMCAP_se=$'\e[0m'
 
-      export PS1="\[\e[38;05;237m\]\h \[\e[38;05;70m\]\w \[\e[38;05;237m\]\$(git branch --show-current 2> /dev/null) \[\e[38;05;70m\]\$\[\e[00m\] "
+      export PS1="\[\e[38;05;237m\]\h \[\e[38;05;70m\]\W \[\e[38;05;237m\]\$(git branch --show-current 2> /dev/null) \[\e[38;05;70m\]\$\[\e[00m\] "
       fortune
       '';
   };

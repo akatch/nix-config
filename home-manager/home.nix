@@ -7,6 +7,7 @@
 }: {
   imports = [
     # cli
+    ./bash.nix
     ./direnv.nix
     ./git.nix
     ./tmux.nix
@@ -49,6 +50,19 @@
       QUOTING_STYLE = "literal";
       VISUAL = "$EDITOR";
     };
+
+    shellAliases = {
+      "e" = "vim -p";
+      "g" = "git";
+      "gr" = "grep -r";
+      "hms" = "home-manager switch --flake .#$(whoami)@$(hostname)";
+      "l" = "ls -lhG";
+      "lah" = "ls -lahG";
+      "nrs" = "sudo nixos-rebuild switch";
+      "se" = "sudo -e";
+      "ta" = "tmux attach -t";
+    };
+
     packages = with pkgs; [
       # cli
       fortune

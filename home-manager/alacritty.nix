@@ -5,7 +5,17 @@
       font = {
         size = 18;
       };
-
+      key_bindings = [
+        {
+          key = "V";
+          mods = "Control";
+          action = "Paste";
+        }{
+          key = "V";
+          mods = "Control|Shift";
+          action = "PasteSelection";
+        }
+      ];
       colors = {
         primary = {
           background = "#080808";
@@ -46,6 +56,12 @@
             background = "#080808";
             foreground = "#ffd700";
           };
+        };
+      };
+      window = {
+        padding = {
+          x = 5;
+          y = 5;
         };
       };
     };

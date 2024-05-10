@@ -48,6 +48,14 @@ nix-shell -p alacritty
 
 Check out [nix + direnv][]
 
+### Package search
+
+Search for specific [versions][nix package versions] of packages and get installation directions
+
+### Dev templates
+
+Get started with some basic [flake dev templates][] for every language
+
 [the-nix-way/nome]: https://github.com/the-nix-way/nome
 [anthr76/snowflake]: https://github.com/anthr76/snowflake
 [coreweave/coreweave.nix]: https://github.com/coreweave/coreweave.nix
@@ -55,3 +63,5 @@ Check out [nix + direnv][]
 [home-manager manual]: https://nix-community.github.io/home-manager/options.xhtml
 [nixOS modules]: https://nixos.wiki/wiki/NixOS_modules
 [Misterio77/nix-starter-configs]: https://github.com/Misterio77/nix-starter-configs?search=1
+[nix package versions]: https://lazamar.co.uk/nix-versions/
+[flake dev templates]: https://github.com/the-nix-way/dev-templates/tree/main

@@ -34,9 +34,9 @@
         bind a attach -d
         bind ] paste-buffer -s ' '
         bind '}' paste-buffer -r
-        bind s split-window
-        bind Enter split-window -l 25%
-        bind v split-window -h
+        bind s split-window -c "#{pane_current_path}"
+        bind Enter split-window -l 25% -c "#{pane_current_path}"
+        bind v split-window -h -c "#{pane_current_path}"
         bind -r h select-pane -L
         bind -r j select-pane -D
         bind -r k select-pane -U

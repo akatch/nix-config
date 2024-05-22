@@ -6,20 +6,20 @@
   ...
 }: {
   imports = [
-    # cli
+    # core
+    ./alacritty.nix
     ./bash.nix
     ./direnv.nix
+    ./env.nix
     ./git.nix
     ./tmux.nix
     #./vim.nix
     ./zsh.nix
-    ./env.nix
 
     # k8s
     #./k9s.nix
 
-    # gui
-    ./alacritty.nix
+    # linux
     ./dunst.nix
     ./i3status.nix
     ./swayidle.nix

@@ -5,7 +5,7 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      font = {
+      font.normal = {
         size = 18;
         family = "${config.fontProfiles.monospace.family}";
       };

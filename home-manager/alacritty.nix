@@ -9,7 +9,7 @@
         size = 18;
         family = "${config.fontProfiles.monospace.family}";
       };
-      key_bindings = [
+      keyboard.bindings = [
         {
           key = "V";
           mods = "Control";

@@ -5,9 +5,11 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      font.normal = {
+      font = {
         size = 18;
-        family = "${config.fontProfiles.monospace.family}";
+        normal = {
+          family = "${config.fontProfiles.monospace.family}";
+        };
       };
       keyboard.bindings = [
         {

@@ -1,9 +1,13 @@
 {
+  config,
+  ...
+}: {
   programs.alacritty = {
     enable = true;
     settings = {
       font = {
         size = 18;
+        family = "${config.fontProfiles.monospace.family}";
       };
       key_bindings = [
         {

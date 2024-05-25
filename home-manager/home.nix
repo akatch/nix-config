@@ -13,7 +13,7 @@
     ./env.nix
     ./git.nix
     ./tmux.nix
-    #./vim.nix
+    ./vim.nix
     ./zsh.nix
 
     # k8s

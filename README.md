@@ -22,13 +22,6 @@ home-manager switch --flake .#$(whoami)@$(hostname)
 
 ## Tips 'n' Tricks
 
-### Add unstable channel
-
-```shell
-nix-channel --add https://channels.nixos.org/nixpkgs-unstable nixpkgs
-nix-channel --update
-```
-
 ### Upgrading packages
 
 ```shell
@@ -39,8 +32,6 @@ home-manager switch --flake .#$(whoami)@$(hostname)
 ### Run arbitrary packages in a sandboxed `nix-shell`
 
 ```shell
-nix-channel --add https://channels.nixos.org/nixpkgs-unstable nixpkgs
-nix-channel --update
 nix-shell -p alacritty
 ```
 
@@ -62,6 +53,6 @@ Get started with some basic [flake dev templates][] for every language
 [nix + direnv]: https://determinate.systems/posts/nix-direnv/
 [home-manager manual]: https://nix-community.github.io/home-manager/options.xhtml
 [nixOS modules]: https://nixos.wiki/wiki/NixOS_modules
-[Misterio77/nix-starter-configs]: https://github.com/Misterio77/nix-starter-configs?search=1
+[Misterio77/nix-starter-configs]: https://github.com/Misterio77/nix-starter-configs
 [nix package versions]: https://lazamar.co.uk/nix-versions/
 [flake dev templates]: https://github.com/the-nix-way/dev-templates/tree/main

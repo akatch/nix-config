@@ -6,24 +6,8 @@
   ...
 }: {
   imports = [
-    # core
     ./alacritty.nix
-    ./bash.nix
-    ./direnv.nix
-    ./env.nix
-    ./git.nix
-    ./tmux.nix
-    ./vim.nix
-    ./zsh.nix
-
-    # k8s
     #./k9s.nix
-
-    # linux
-    ./dunst.nix
-    ./i3status.nix
-    ./swayidle.nix
-    ./swaylock.nix
   ];
 
   nixpkgs = {
@@ -41,11 +25,6 @@
     ];
 
     packages = with pkgs; [
-      # cli
-      fortune
-      jq
-      yq
-
       # gui
       firefox
       signal-desktop

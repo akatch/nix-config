@@ -25,11 +25,6 @@
     ];
 
     packages = with pkgs; [
-      # gui
-      firefox
-      signal-desktop
-      keepassxc
-
       # laptop
       brightnessctl
 

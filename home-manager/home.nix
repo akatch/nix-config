@@ -5,11 +5,6 @@
   pkgs,
   ...
 }: {
-  imports = [
-    ./alacritty.nix
-    #./k9s.nix
-  ];
-
   nixpkgs = {
     config = {
       allowUnfree = true;
@@ -20,15 +15,8 @@
   home = {
     username = "al";
     homeDirectory = "/home/al";
-    sessionPath = [
-      "$HOME/code/github.com/akatch/scripts"
-    ];
-
     packages = with pkgs; [
-      # laptop
       brightnessctl
-
-      # other
       syncthing
     ];
   };

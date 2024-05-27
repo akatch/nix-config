@@ -11,6 +11,7 @@
     ./vim.nix
     ./zsh.nix
   ];
+
   home = {
     packages = with pkgs; [
       fortune

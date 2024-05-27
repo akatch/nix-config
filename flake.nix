@@ -1,11 +1,9 @@
 {
-  description = "Your new nix config";
+  description = "The temporal surge we detected was caused by an explosion of a microscopic singularity passing through this solar system. Somehow, the energy emitted by the singularity shifted the chroniton particles in our hull into a high state of temporal polarisation.";
 
   inputs = {
-    # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    # Home manager
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -19,12 +17,15 @@
     inherit (self) outputs;
   in {
     # NixOS configuration entrypoint
-    # `nixos-rebuild --flake .#$(hostname)`
+    # `nixos-rebuild switch --flake .#$(hostname)`
     nixosConfigurations = {
       europa = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        # > Our main nixos configuration file <
-        modules = [./nixos/configuration.nix];
+        specialArgs = {
+          inherit inputs outputs;
+        };
+        modules = [
+          ./nixos/configuration.nix
+        ];
       };
     };
 
@@ -33,7 +34,9 @@
     homeConfigurations = {
       "al@europa" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
+        extraSpecialArgs = {
+          inherit inputs outputs;
+        };
         modules = [
           ./home-manager/home.nix
           ./home-manager/personalities/core

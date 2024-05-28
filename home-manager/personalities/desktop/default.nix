@@ -12,6 +12,7 @@
 
     # always import alacritty for this personality
     ./alacritty.nix
+    ./zathura.nix
   ];
 
   home = {

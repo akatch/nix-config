@@ -41,6 +41,7 @@
           ./home-manager/home.nix
           ./home-manager/personalities/core
           ./home-manager/personalities/desktop
+          ./home-manager/personalities/desktop/swaywm
         ];
       };
     };

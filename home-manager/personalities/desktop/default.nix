@@ -4,6 +4,7 @@
 }: {
   imports = [
     ./alacritty.nix
+    ./spotify.nix
     ./zathura.nix
   ];
 
@@ -11,7 +12,6 @@
     packages = with pkgs; [
       firefox
       signal-desktop
-      spotify-client
       keepassxc
       zoom-us
     ];

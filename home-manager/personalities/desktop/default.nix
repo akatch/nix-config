@@ -11,7 +11,9 @@
     packages = with pkgs; [
       firefox
       signal-desktop
+      spotify-client
       keepassxc
+      zoom-us
     ];
   };
 }

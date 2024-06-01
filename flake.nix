@@ -38,11 +38,7 @@
           inherit inputs outputs;
         };
         modules = [
-          ./home-manager/home.nix
-          ./home-manager/personalities/core
-          ./home-manager/personalities/desktop
-          ./home-manager/personalities/desktop/swaywm
-          ./home-manager/personalities/desktop/firefox
+          ./home-manager/hosts/europa.nix
         ];
       };
     };

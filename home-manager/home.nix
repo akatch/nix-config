@@ -2,7 +2,6 @@
   inputs,
   lib,
   config,
-  pkgs,
   ...
 }: {
   nixpkgs = {
@@ -10,15 +9,6 @@
       allowUnfree = true;
       allowUnfreePredicate = _: true;
     };
-  };
-
-  home = {
-    username = "al";
-    homeDirectory = "/home/al";
-    packages = with pkgs; [
-      brightnessctl
-      syncthing
-    ];
   };
 
   programs.home-manager.enable = true;

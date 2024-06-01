@@ -10,7 +10,6 @@
 
   home = {
     packages = with pkgs; [
-      firefox
       signal-desktop
       keepassxc
       zoom-us

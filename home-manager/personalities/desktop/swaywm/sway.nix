@@ -8,6 +8,7 @@
       background = "#080808";
       foreground = "#767676";
       darkgray = "#1c1c1c";
+
       black = "#121212";
       red = "#d7005f";
       green = "#00af00";
@@ -16,6 +17,7 @@
       magenta = "#8700ff";
       cyan = "#00afaf";
       silver = "#444444";
+
       gray = "#303030";
       brightred = "#d75f5f";
       brightgreen = "#5f8700";
@@ -86,6 +88,10 @@
           };
           background = "${background}";
       };
+      defaultWorkspace = "workspace number 1";
+      floating = {
+        titlebar = false;
+      };
       focus = {
         followMouse = false;
         wrapping = "workspace";
@@ -141,7 +147,7 @@
         };
       };
       startup = [
-        { command = "tmux new -s $USER -d"; }
+        { command = "tmux new -s code -c $HOME/code -d"; }
         { command = "alacritty"; }
         { command = "firefox"; }
       ];
@@ -150,6 +156,7 @@
     extraConfig =
       ''
         bindswitch lid:on exec swaylock
+        default_border pixel 1
       '';
   };
 }

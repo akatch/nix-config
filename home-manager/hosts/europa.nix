@@ -9,7 +9,7 @@
     ../personalities/desktop/swaywm
     ../personalities/desktop/firefox
     ../personalities/cli
-    ../personalities/cli/k8s
+    ../personalities/k8s
   ];
 
   home = {
@@ -20,4 +20,11 @@
       syncthing
     ];
   };
+
+  # TODO set the signal_desktop widget theme
+  # These do not work
+  #qt = {
+  #  platformTheme.name = "gtk3";
+  #  style.name = "gtk3";
+  #};
 }

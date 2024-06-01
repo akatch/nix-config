@@ -5,6 +5,7 @@
     userEmail = "bowlesan@proton.me";
 
     aliases = {
+      a = "add";
       co = "checkout";
       d = "diff";
       fp = "push --force-with-lease origin HEAD";

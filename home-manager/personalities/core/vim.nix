@@ -66,11 +66,10 @@
         nmap <silent> <C-l> :wincmd l<CR>
         nmap <silent> <leader>n :set number!<CR>
         nmap <silent> <leader>p :set paste!<CR>
-        nmap <silent> <A-j> :ALENextWrap<CR>
-        nmap <silent> <A-k> :ALEPreviousWrap<CR>
-        nmap <silent> <A-d> :ALEDetail<CR>
+        nmap <silent> <leader>j :ALENextWrap<CR>
+        nmap <silent> <leader>k :ALEPreviousWrap<CR>
         nmap <silent> <leader>t :NERDTreeToggle<CR>
-        nmap <silent> <leader>d :r!date "+\%F"<CR>
+        nmap <silent> <leader>d :r!date "+\%F \%T"<CR>
         nmap <silent> <leader>z :VimtexView<CR>
 
         " pane separators like tmux

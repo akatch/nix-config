@@ -8,7 +8,8 @@
     ../personalities/desktop
     ../personalities/desktop/swaywm
     ../personalities/desktop/firefox
-    ../personalities/cli/k9s.nix
+    ../personalities/cli
+    ../personalities/cli/k8s
   ];
 
   home = {

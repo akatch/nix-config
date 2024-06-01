@@ -1,6 +1,13 @@
 {
   programs.k9s = {
     enable = true;
+    settings = {
+      k9s = {
+        ui = {
+          skin = "oceans";
+        };
+      };
+    };
     skins = {
       oceans = {
         k9s = {

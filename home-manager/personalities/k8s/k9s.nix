@@ -4,7 +4,7 @@
     settings = {
       k9s = {
         ui = {
-          skin = "oceans";
+          skin = "oceans.yaml";
         };
       };
     };

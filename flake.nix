@@ -42,6 +42,7 @@
           ./home-manager/personalities/core
           ./home-manager/personalities/desktop
           ./home-manager/personalities/desktop/swaywm
+          ./home-manager/personalities/desktop/firefox
         ];
       };
     };

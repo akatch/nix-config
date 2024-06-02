@@ -9,6 +9,7 @@
       co = "checkout";
       d = "diff";
       fp = "push --force-with-lease origin HEAD";
+      l = "log --format=oneline";
       p = "pull";
       poh = "push origin HEAD";
       s = "stash";

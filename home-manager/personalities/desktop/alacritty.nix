@@ -20,10 +20,6 @@
           key = "V";
           mods = "Control|Shift";
           action = "PasteSelection";
-        }{
-          key = "Space";
-          mods = "Shift|Control";
-          action = "ToggleViMode";
         }
       ];
       colors = {

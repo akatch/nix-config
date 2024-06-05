@@ -23,8 +23,7 @@
         }{
           key = "Space";
           mods = "Shift|Control";
-          #action = "ToggleViMode";
-          action = "Paste";
+          action = "ToggleViMode";
         }
       ];
       colors = {

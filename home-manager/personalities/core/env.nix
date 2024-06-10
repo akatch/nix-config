@@ -2,6 +2,7 @@
   home = {
     sessionPath = [
       "$HOME/code/github.com/akatch/scripts"
+      "$HOME/.local/bin"
     ];
 
     sessionVariables = {

@@ -7,9 +7,9 @@
         ui = {
           logoless = true;
           skin = "oceans";
+          defaultsToFullScreen = true;
         };
         logger = {
-          fullScreen = true;
           textWrap = true;
         };
       };

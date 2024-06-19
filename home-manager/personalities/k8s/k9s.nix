@@ -3,8 +3,10 @@
     enable = true;
     settings = {
       k9s = {
+        noExitOnCtrlC = true;
         ui = {
-          skin = "oceans.yaml";
+          logoless = true;
+          skin = "oceans";
         };
       };
     };

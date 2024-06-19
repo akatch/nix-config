@@ -85,7 +85,7 @@
             };
 
             logs = {
-              fgColor = "#767676";
+              fgColor = "default";
               bgColor = "default";
             };
           };

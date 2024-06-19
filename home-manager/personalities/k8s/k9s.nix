@@ -4,9 +4,9 @@
     settings = {
       k9s = {
         noExitOnCtrlC = true;
-        skin = "oceans.yaml";
         ui = {
           logoless = true;
+          skin = "oceans";
         };
         logger = {
           fullScreen = true;

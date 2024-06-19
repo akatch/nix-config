@@ -4,9 +4,13 @@
     settings = {
       k9s = {
         noExitOnCtrlC = true;
+        skin = "oceans";
         ui = {
           logoless = true;
-          skin = "oceans";
+        };
+        logger = {
+          fullScreen = true;
+          textWrap = true;
         };
       };
     };

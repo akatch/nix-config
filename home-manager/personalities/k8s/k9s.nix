@@ -4,7 +4,7 @@
     settings = {
       k9s = {
         noExitOnCtrlC = true;
-        skin = "oceans";
+        skin = "oceans.yaml";
         ui = {
           logoless = true;
         };

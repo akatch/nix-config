@@ -47,7 +47,7 @@
         set wildmenu
         filetype plugin indent on
         autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-        autocmd BufNew,BufNewFile,BufRead *todo.txt setlocal ft=todo
+        autocmd BufNew,BufNewFile,BufRead *todo.txt set ft=todo
         autocmd BufNew,BufNewFile,BufRead *.tpl setlocal ft=helm
 
         " Insert cursor at previous position

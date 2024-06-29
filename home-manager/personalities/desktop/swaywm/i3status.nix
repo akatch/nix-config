@@ -52,7 +52,7 @@
       "tztime cst" = {
         position = 5;
         settings = {
-          format = "<span foreground='#5faf00'>%A %e %b  %k:%M:%S </span>";
+          format = "<span foreground='#5faf00'>%A %e %B  %k:%M:%S </span>";
           timezone = "US/Central";
           separator = "no";
         };

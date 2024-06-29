@@ -17,6 +17,7 @@
     homeDirectory = "/home/al";
     packages = with pkgs; [
       brightnessctl
+      btop
       syncthing
     ];
   };

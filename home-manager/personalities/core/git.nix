@@ -6,10 +6,12 @@
 
     aliases = {
       a = "add";
+      b = "branch";
+      c = "commit";
       co = "checkout";
       d = "diff";
       fp = "push --force-with-lease origin HEAD";
-      l = "log --format=oneline";
+      l = "log --format=oneline -n 10";
       p = "pull";
       poh = "push origin HEAD";
       s = "stash";

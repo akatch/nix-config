@@ -81,6 +81,7 @@
             yaml = {
               keyColor = "cyan";
               colonColor = "green";
+              fgColor = "default";
               valueColor = "#767676";
             };
 

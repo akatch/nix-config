@@ -161,5 +161,12 @@
       ];
       terminal = "alacritty";
     };
+    extraConfig =
+      ''
+        bindswitch lid:on exec swaylock
+        default_border pixel 1
+        bindgesture swipe:right workspace prev
+        bindgesture swipe:left workspace next
+      '';
   };
 }

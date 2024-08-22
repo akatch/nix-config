@@ -3,7 +3,7 @@
     enable = true;
     enableCompletion = true;
     autocd = true;
-    historySubstringSearch.enable = true;
+    #historySubstringSearch.enable = true;
 
     history = {
       expireDuplicatesFirst = true;
@@ -25,6 +25,7 @@
 
     initExtra =
       ''
+      setopt INC_APPEND_HISTORY
       h() {
           history | grep --color=auto $1
       }

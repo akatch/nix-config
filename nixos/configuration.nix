@@ -27,6 +27,18 @@
     pulse.enable = true;
   };
 
+  # garbage collection
+  nix = {
+    gc = {
+      automatic = true;
+      interval = {
+        Day = 7;
+      };
+      # Keep the last 3 generations
+      options = "--delete-older-than +3";
+    };
+  };
+
   # podman
   # from https://nixos.wiki/wiki/Podman
   virtualisation = {

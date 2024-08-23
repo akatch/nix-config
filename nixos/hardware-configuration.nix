@@ -24,6 +24,11 @@
     fsType = "vfat";
   };
 
+  fileSystems."/home" = {
+    device = "/dev/disk/by-label/NIXHOME";
+    fsType = "ext4";
+  };
+
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

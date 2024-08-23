@@ -41,6 +41,15 @@
           ./home-manager/hosts/europa.nix
         ];
       };
+      "al@callisto" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {
+          inherit inputs outputs;
+        };
+        modules = [
+          ./home-manager/hosts/callisto.nix
+        ];
+      };
     };
   };
 }

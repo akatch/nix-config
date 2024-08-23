@@ -3,9 +3,12 @@
 # configuration.nix(5) or nixos-help or https://search.nixos.org/options
 #
 
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
   ];

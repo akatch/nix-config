@@ -14,8 +14,10 @@
 
   home = {
     packages = with pkgs; [
+      btop
       fortune
       jq
+      viddy
       yq
     ];
   };

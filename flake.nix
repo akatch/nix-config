@@ -25,6 +25,16 @@
         };
         modules = [
           ./nixos/configuration.nix
+          ./nixos/hosts/europa.nix
+        ];
+      };
+      callisto = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs outputs;
+        };
+        modules = [
+          ./nixos/configuration.nix
+          ./nixos/hosts/callisto.nix
         ];
       };
     };

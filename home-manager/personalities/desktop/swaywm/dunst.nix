@@ -19,7 +19,7 @@
         transparency = 0;
         idle_threshold = 30;
         follow = "none";
-        monitor = 0;
+        monitor = 1;
         sticky_history = true;
         history_length = 20;
         show_indicators = false;

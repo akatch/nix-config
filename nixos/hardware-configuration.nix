@@ -26,7 +26,7 @@
 
   fileSystems."/home" = {
     device = "/dev/disk/by-label/NIXHOME";
-    fsType = "ext4";
+    fsType = "xfs";
   };
 
   swapDevices = [ ];

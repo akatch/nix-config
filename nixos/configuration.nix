@@ -16,7 +16,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "europa";
   networking.wireless.enable = true;
 
   programs.sway.enable = true;
@@ -31,15 +30,11 @@
   };
 
   # garbage collection
-  nix = {
-    gc = {
-      automatic = true;
-      interval = {
-        Day = 7;
-      };
-      # Keep the last 3 generations
-      options = "--delete-older-than +3";
-    };
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    # Keep the last 3 generations
+    options = "--delete-older-than +3";
   };
 
   # podman

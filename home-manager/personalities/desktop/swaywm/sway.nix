@@ -101,7 +101,6 @@
         size = 18.0;
       };
       gaps = {
-        inner = 15;
         smartBorders = "on";
         smartGaps = true;
       };
@@ -125,6 +124,7 @@
       {
         "${mod}+Shift+w" = "exec 'firefox'";
         "${mod}+n" = "exec 'dunstctl close-all'";
+        "${mod}+m" = "exec alacritty msg create-window -e pulsemixer";
         "Ctrl+space" = "workspace 1";
         "Alt+space" = "workspace 2";
         "Ctrl+Shift+l" = "exec swaylock";
@@ -148,15 +148,12 @@
       };
       startup = [
         { command = "tmux new -s code -c $HOME/code -d"; }
+        { command = "tmux new -s al -d"; }
         { command = "alacritty"; }
         { command = "firefox"; }
+        { command = "swayidle -w timeout 1800 'swaylock -f -c 000000' timeout 3600 'swaymsg \"output * dpms off\"' resume 'swaymsg \"output * dpms on\"' before-sleep 'swaylock -f -c 000000'"; }
       ];
       terminal = "alacritty";
     };
-    extraConfig =
-      ''
-        bindswitch lid:on exec swaylock
-        default_border pixel 1
-      '';
   };
 }

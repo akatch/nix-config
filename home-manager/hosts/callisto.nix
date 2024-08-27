@@ -21,22 +21,38 @@
     ];
   };
 
-  wayland.windowManager.sway.extraConfig =
+  wayland.windowManager.sway =
+  let
+    main = "LG Electronics LG HDR WQHD 0x0000F638";
+    aux = "ASUSTek COMPUTER INC VG245 K1LMQS103175";
+    player = "spotify";
+  in
+  {
+    config = {
+      gaps = {
+        inner = 25;
+      };
+      output = {
+        "${main}" = {
+          pos = "0 2160";
+        };
+        "${aux}" = {
+          pos = "0 1080";
+        };
+      };
+    };
+    extraConfig =
     ''
+       bindsym F9 exec playerctl -p ${player} play-pause
+       bindsym F10 exec playerctl -p ${player} next
+       bindsym Alt+F10 exec playerctl -p ${player} position 0
        default_border pixel 1
-       set $main "LG Electronics LG HDR WQHD 0x0000F638"
-       set $aux "ASUSTek COMPUTER INC VG245 K1LMQS103175"
-       set $gapwidth 25
-       workspace 1 output $main
-       workspace 2 output $main
-       workspace 3 output $aux
-       workspace 4 output $main
-       bindsym F9 exec playerctl -p $player play-pause
-       bindsym F10 exec playerctl -p $player next
-       bindsym Alt+F10 exec playerctl -p $player position 0
-       output $main pos 0 2160
-       output $aux pos 0 1080
+       workspace 1 output ${main}
+       workspace 2 output ${main}
+       workspace 3 output ${aux}
+       workspace 4 output ${main}
     '';
+  };
 
   programs.i3status = {
     modules = {

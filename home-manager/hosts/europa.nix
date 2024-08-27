@@ -20,11 +20,16 @@
     ];
   };
 
-  wayland.windowManager.sway.extraConfig =
+  wayland.windowManager.sway = {
+    config.gaps = {
+      inner = 15;
+    };
+    extraConfig =
     ''
       bindswitch lid:on exec swaylock
       default_border pixel 1
     '';
+  };
 
   programs.i3status.modules = {
     "disk /" = {

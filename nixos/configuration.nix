@@ -29,6 +29,8 @@
     pulse.enable = true;
   };
 
+  services.localtimed.enable = true;
+
   # garbage collection
   nix.gc = {
     automatic = true;

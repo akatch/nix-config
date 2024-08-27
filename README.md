@@ -8,6 +8,13 @@ inspired by [the-nix-way/nome][], [anthr76/snowflake][], and [Misterio77/nix-sta
 
 ### NixOS
 
+Start a nix-shell with some basic tools
+
+```shell
+export NIX_CONFIG="experimental-features = nix-command flakes"
+nix shell nixpkgs#git nixpkgs#home-manager
+```
+
 Stub out a template flake
 ```shell
 nix flake init -t github:misterio77/nix-starter-config#minimal
@@ -16,17 +23,27 @@ nix flake init -t github:misterio77/nix-starter-config#minimal
 Edit some stuff in flake.nix etc, then
 
 ```shell
-sudo nixos-rebuild switch --flake .#$(hostname)
 home-manager switch --flake .#$(whoami)@$(hostname)
+sudo nixos-rebuild switch --flake .#$(hostname)
 ```
 
 ## Tips 'n' Tricks
 
-### Upgrading packages
+### System upgrades
+
+Update `inputs.nixpkgs.url`, then
 
 ```shell
 nix flake update
 home-manager switch --flake .#$(whoami)@$(hostname)
+sudo nixos-rebuild boot --flake .#$(hostname)
+```
+Then reboot
+
+### Upgrading packages
+
+```shell
+sudo nixos-rebuild switch --upgrade --flake .#$(hostname)
 ```
 
 ### Run arbitrary packages in a sandboxed `nix-shell`

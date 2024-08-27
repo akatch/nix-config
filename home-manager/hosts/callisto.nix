@@ -92,7 +92,7 @@
       "cpu_temperature 0" = {
         position = 5;
         settings = {
-          format = "%degrees °C";
+          format = "%degrees °C ";
           path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input";
           separator = "no";
         };

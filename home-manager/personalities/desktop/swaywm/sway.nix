@@ -147,9 +147,9 @@
         };
       };
       startup = [
+        { command = "eval \"$(ssh-agent)\""; }
         { command = "tmux new -s code -c $HOME/code -d"; }
-        { command = "tmux new -s al -d"; }
-        { command = "alacritty"; }
+        { command = "alacritty -e tmux new -s al"; }
         { command = "firefox"; }
         { command = "swayidle -w timeout 1800 'swaylock -f -c 000000' timeout 3600 'swaymsg \"output * dpms off\"' resume 'swaymsg \"output * dpms on\"' before-sleep 'swaylock -f -c 000000'"; }
       ];

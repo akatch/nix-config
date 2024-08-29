@@ -27,7 +27,7 @@
       "hms" = "home-manager switch --flake .#$(whoami)@$(hostname)";
       "l" = "ls -lhG";
       "lah" = "ls -lahG";
-      "nrs" = "sudo nixos-rebuild switch";
+      "nrs" = "sudo nixos-rebuild switch --flake .#$(hostname)";
       "se" = "sudo -e";
       "ta" = "tmux attach -t";
     };

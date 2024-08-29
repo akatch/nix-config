@@ -87,10 +87,4 @@
       };
     };
   };
-  # TODO set the signal_desktop widget theme
-  # These do not work
-  #qt = {
-  #  platformTheme.name = "gtk3";
-  #  style.name = "gtk3";
-  #};
 }

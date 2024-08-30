@@ -15,6 +15,7 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
 
   networking.wireless.enable = true;
 
@@ -35,8 +36,7 @@
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    # Keep the last 3 generations
-    options = "--delete-older-than +3";
+    options = "--delete-older-than 5d";
   };
 
   # podman
@@ -46,16 +46,21 @@
       enable = true;
       defaultNetwork.settings.dns_enabled = true;
     };
+
+    libvirtd = {
+      enable = true;
+    };
   };
 
   users.users.al = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" ];
-    shell = "/run/current-system/sw/bin/zsh";
+    extraGroups = [ "wheel" "video" "mlocate" "qemu-libvirtd" "libvirtd" ];
+    shell = "${pkgs.zsh}/bin/zsh";
   };
 
   environment.systemPackages = with pkgs; [
     vim
+    mlocate
     cifs-utils
   ];
 

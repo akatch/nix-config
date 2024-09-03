@@ -26,6 +26,8 @@
     };
     extraConfig =
     ''
+      bindgesture swipe:right workspace prev
+      bindgesture swipe:left workspace next
       bindswitch lid:on exec swaylock
       default_border pixel 1
     '';

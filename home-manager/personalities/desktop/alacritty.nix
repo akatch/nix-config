@@ -7,9 +7,6 @@
     settings = {
       font = {
         size = 18;
-        normal = {
-          family = "${config.fontProfiles.monospace.family}";
-        };
       };
       keyboard.bindings = [
         {

@@ -32,8 +32,15 @@
   };
 
   programs.i3status.modules = {
-    "disk /" = {
+    "disk /home" = {
       # position is left to right
+      position = 0;
+      settings = {
+        format = "/home: %used (%percentage_used)";
+      };
+    };
+
+    "disk /" = {
       position = 1;
       settings = {
         format = "/: %used (%percentage_used)";

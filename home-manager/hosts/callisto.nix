@@ -29,29 +29,19 @@
     player = "spotify";
   in
   {
-    config = {
-      gaps = {
-        inner = 25;
-      };
-      output = {
-        "${main}" = {
-          pos = "0 2160";
-        };
-        "${aux}" = {
-          pos = "0 1080";
-        };
-      };
-    };
+    config.gaps.inner = 25;
     extraConfig =
     ''
        bindsym F9 exec playerctl -p ${player} play-pause
        bindsym F10 exec playerctl -p ${player} next
        bindsym Alt+F10 exec playerctl -p ${player} position 0
        default_border pixel 1
-       workspace 1 output ${main}
-       workspace 2 output ${main}
-       workspace 3 output ${aux}
-       workspace 4 output ${main}
+       output "${main}" pos 0 2160
+       output "${aux}" pos 0 1080
+       workspace 1 output "${main}"
+       workspace 2 output "${main}"
+       workspace 3 output "${aux}"
+       workspace 4 output "${main}"
     '';
   };
 
@@ -90,20 +80,20 @@
         };
       };
 
-      "cpu_temperature 0" = {
-        position = 5;
-        settings = {
-          format = "%degrees °C ";
-          path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input";
-          separator = "no";
-        };
-      };
-
       "cpu_usage" = {
         position = 4;
         settings = {
           format = "cpu: %usage ";
           degraded_threshold = 55;
+          separator = "no";
+        };
+      };
+
+      "cpu_temperature 0" = {
+        position = 5;
+        settings = {
+          format = "%degrees °C ";
+          path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input";
           separator = "no";
         };
       };

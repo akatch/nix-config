@@ -4,6 +4,7 @@
 }: {
   imports = [
     ./alacritty.nix
+    ./gtk.nix
     ./spotify.nix
     ./syncthing.nix
     ./zathura.nix

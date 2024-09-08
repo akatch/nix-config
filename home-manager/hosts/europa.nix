@@ -6,8 +6,6 @@
     ../home.nix
     ../personalities/core
     ../personalities/desktop
-    ../personalities/desktop/swaywm
-    ../personalities/desktop/firefox
     ../personalities/cli
     ../personalities/k8s
   ];
@@ -17,6 +15,8 @@
     homeDirectory = "/home/al";
     packages = with pkgs; [
       brightnessctl
+      prusa-slicer
+      weechat
     ];
   };
 
@@ -37,14 +37,14 @@
   programs.i3status.modules = {
     "disk /home" = {
       # position is left to right
-      position = 0;
+      position = 1;
       settings = {
         format = "/home: %used (%percentage_used)";
       };
     };
 
     "disk /" = {
-      position = 1;
+      position = 0;
       settings = {
         format = "/: %used (%percentage_used)";
       };

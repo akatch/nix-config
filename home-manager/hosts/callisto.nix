@@ -6,8 +6,6 @@
     ../home.nix
     ../personalities/core
     ../personalities/desktop
-    ../personalities/desktop/swaywm
-    ../personalities/desktop/firefox
     ../personalities/cli
     ../personalities/cli/rtorrent.nix
     ../personalities/k8s

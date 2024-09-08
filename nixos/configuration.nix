@@ -17,7 +17,10 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
 
-  networking.wireless.enable = true;
+  networking.wireless = {
+    enable = true;
+    userControlled.enable = true;
+  };
 
   programs.sway.enable = true;
   programs.zsh.enable = true;

@@ -4,6 +4,7 @@
 }: {
   imports = [
     ./alacritty.nix
+    ./fonts.nix
     ./gtk.nix
     ./spotify.nix
     ./syncthing.nix

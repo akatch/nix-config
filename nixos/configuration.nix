@@ -74,20 +74,4 @@
 
     in ["${automount_opts},credentials=/etc/nixos/smb-secrets"];
   };
-
-  fonts = {
-    packages = with pkgs; [
-      noto-fonts
-      noto-fonts-color-emoji
-      terminus_font
-    ];
-    fontconfig = {
-      # Can this be set per-user?
-      defaultFonts = {
-        serif = [ "Noto Serif" ];
-        sansSerif = [ "Noto Sans" ];
-        monospace = [ "Terminus" ];
-      };
-    };
-  };
 }

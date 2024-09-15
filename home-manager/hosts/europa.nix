@@ -28,7 +28,7 @@
     ''
       bindgesture swipe:right workspace prev
       bindgesture swipe:left workspace next
-      bindswitch lid:on exec swaylock
+      bindswitch lid:off exec output eDP-1 enable
       bindsym Mod4+z output DP-2 enable; output eDP-1 disable; workspace 1 output DP-2; workspace 2 output DP-2
       default_border pixel 1
     '';

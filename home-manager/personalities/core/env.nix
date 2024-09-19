@@ -15,6 +15,7 @@
       LESSCHARSET = "utf-8";
       MANWIDTH = "60";
       MANROFFOPT = "-c";
+      NIX_CONFIG = "experimental-features = nix-command flakes";
       QUOTING_STYLE = "literal";
       VISUAL = "$EDITOR";
     };

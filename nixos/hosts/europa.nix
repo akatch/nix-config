@@ -2,10 +2,17 @@
   networking = {
     hostName = "europa";
     wireless = {
-      environmentFile = "/run/secrets/wireless.env";
+      environmentFile = "/etc/nixos/wireless.env";
       networks = {
         WifiIsComing.psk = "@PSK_HOME@";
       };
+    };
+  };
+
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
     };
   };
 

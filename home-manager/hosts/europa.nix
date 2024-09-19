@@ -59,15 +59,33 @@
       };
     };
 
-    "load" = {
+    "cpu_usage" = {
       position = 3;
+      settings = {
+        format = "cpu: %usage ";
+        degraded_threshold = 55;
+        separator = "no";
+      };
+    };
+
+    "cpu_temperature 0" = {
+      position = 4;
+      settings = {
+        format = "%degrees °C ";
+        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input";
+        separator = "no";
+      };
+    };
+
+    "load" = {
+      position = 5;
       settings = {
         format = "%1min   %5min   %15min";
       };
     };
 
     "battery 0" = {
-      position = 4;
+      position = 6;
       settings = {
         format = "%status %percentage";
         status_chr = "⚡";
@@ -81,7 +99,7 @@
     };
 
     "tztime cst" = {
-      position = 5;
+      position = 7;
       settings = {
         format = "<span foreground='#5faf00'>%A %e %B  %k:%M:%S </span>";
         timezone = "US/Central";
@@ -90,7 +108,7 @@
     };
 
     "tztime utc" = {
-      position = 6;
+      position = 8;
       settings = {
         format = "<span foreground='#5faf00'>%k:%M</span> ";
         timezone = "Etc/Utc";

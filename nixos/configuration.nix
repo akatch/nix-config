@@ -33,7 +33,7 @@
     pulse.enable = true;
   };
 
-  services.localtimed.enable = true;
+  services.tzupdate.enable = true;
 
   # garbage collection
   nix.gc = {
@@ -65,7 +65,6 @@
     vim
     mlocate
     cifs-utils
-    geoclue2
   ];
 
   # https://nixos.wiki/wiki/Samba

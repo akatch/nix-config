@@ -70,9 +70,10 @@
 
     "cpu_temperature 0" = {
       position = 4;
+      enable = false;
       settings = {
         format = "%degrees °C ";
-        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input";
+        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input";
         separator = "no";
       };
     };
@@ -98,11 +99,10 @@
       };
     };
 
-    "tztime cst" = {
+    "time" = {
       position = 7;
       settings = {
         format = "<span foreground='#5faf00'>%A %e %B  %k:%M:%S </span>";
-        timezone = "US/Central";
         separator = "no";
       };
     };

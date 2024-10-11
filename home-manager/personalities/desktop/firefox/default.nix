@@ -1,7 +1,4 @@
 {
-  pkgs,
-  ...
-}: {
   programs.firefox = {
     enable = true;
     profiles = {
@@ -22,6 +19,7 @@
           "browser.urlbar.openintab" = true;
           "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
           "extensions.pocket.enabled" = false;
+          "extensions.webextensions.restrictedDomains" = "";
           "font.minimum-size.x-western" = 18;
         };
         search = {

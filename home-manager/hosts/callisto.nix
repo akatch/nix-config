@@ -103,11 +103,10 @@
         };
       };
 
-      "tztime cst" = {
+      "time" = {
         position = 7;
         settings = {
           format = "<span foreground='#5faf00'>%A %e %B  %k:%M:%S </span>";
-          timezone = "US/Central";
           separator = "no";
         };
       };

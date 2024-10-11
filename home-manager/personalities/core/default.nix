@@ -15,8 +15,10 @@
   home = {
     packages = with pkgs; [
       btop
+      dig
       fortune
       jq
+      killall
       viddy
       yq
     ];

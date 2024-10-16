@@ -9,6 +9,7 @@
     settings = {
       background = "dark";
       expandtab = true;
+      mouse = "a";
       number = true;
       shiftwidth = 4;
       tabstop = 4;

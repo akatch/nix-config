@@ -5,9 +5,11 @@
       k9s = {
         noExitOnCtrlC = true;
         ui = {
+          defaultsToFullScreen = true;
+          enableMouse = true;
+          headless = true;
           logoless = true;
           skin = "oceans";
-          defaultsToFullScreen = true;
         };
         logger = {
           textWrap = true;
@@ -70,6 +72,10 @@
               fgColor = "#5faf00";
               bgColor = "default";
               cursorColor = "aqua";
+              header = {
+                fgColor = "#5faf00";
+                bgColor = "default";
+              };
             };
 
             header = {

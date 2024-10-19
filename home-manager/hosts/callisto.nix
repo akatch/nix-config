@@ -16,6 +16,7 @@
     homeDirectory = "/home/al";
     packages = with pkgs; [
       prusa-slicer
+      nvtop
       weechat
     ];
   };

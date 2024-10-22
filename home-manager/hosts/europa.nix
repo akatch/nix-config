@@ -36,23 +36,32 @@
   };
 
   programs.i3status.modules = {
-    "disk /home" = {
-      # position is left to right
-      position = 1;
+    "read_file fahstats" = {
+      enabled = false;
+      position = 0;
       settings = {
-        format = "/home: %used (%percentage_used)";
+        path = "~/.cache/fahstats";
+        format = "<span foreground='#5f8700'>f@h: %content</span>";
       };
     };
 
     "disk /" = {
-      position = 0;
+      position = 1;
       settings = {
         format = "/: %used (%percentage_used)";
       };
     };
 
-    "memory" = {
+    "disk /home" = {
+      # position is left to right
       position = 2;
+      settings = {
+        format = "/home: %used (%percentage_used)";
+      };
+    };
+
+    "memory" = {
+      position = 3;
       settings = {
         format = "ram: %used (%percentage_used)";
         threshold_degraded = "20%";
@@ -61,7 +70,7 @@
     };
 
     "cpu_usage" = {
-      position = 3;
+      position = 4;
       settings = {
         format = "cpu: %usage ";
         degraded_threshold = 55;
@@ -70,7 +79,7 @@
     };
 
     "cpu_temperature 0" = {
-      position = 4;
+      position = 5;
       enable = false;
       settings = {
         format = "%degrees °C ";
@@ -80,14 +89,14 @@
     };
 
     "load" = {
-      position = 5;
+      position = 6;
       settings = {
         format = "%1min   %5min   %15min";
       };
     };
 
     "battery 0" = {
-      position = 6;
+      position = 7;
       settings = {
         format = "%status %percentage";
         status_chr = "⚡";
@@ -101,7 +110,7 @@
     };
 
     "time" = {
-      position = 7;
+      position = 8;
       settings = {
         format = "<span foreground='#5faf00'>%A %e %B  %k:%M:%S </span>";
         separator = "no";
@@ -109,7 +118,7 @@
     };
 
     "tztime utc" = {
-      position = 8;
+      position = 9;
       settings = {
         format = "<span foreground='#5faf00'>%k:%M</span> ";
         timezone = "Etc/Utc";

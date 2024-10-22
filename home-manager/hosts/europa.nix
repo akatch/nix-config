@@ -37,7 +37,6 @@
 
   programs.i3status.modules = {
     "read_file fahstats" = {
-      enabled = false;
       position = 0;
       settings = {
         path = "~/.cache/fahstats";

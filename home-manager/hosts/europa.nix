@@ -15,6 +15,7 @@
     homeDirectory = "/home/al";
     packages = with pkgs; [
       brightnessctl
+      calibre
       prusa-slicer
       weechat
     ];

@@ -5,7 +5,7 @@
     settings = {
       add_newline = true;
       kubernetes = {
-        format = "[$cluster](cyan) ";
+        format = "[$context:$namespace](cyan) ";
         disabled = false;
       };
       username = {

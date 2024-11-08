@@ -38,6 +38,7 @@
         set rtp+=~/.vim/bundle/Vundle.vim
         call vundle#begin()
         Plugin 'akatch/vim-oceans'
+        Plugin 'Einenlum/yaml-revealer'
         call vundle#end()
         filetype plugin indent on
         """

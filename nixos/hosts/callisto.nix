@@ -5,6 +5,7 @@
   imports = [
     ../modules/ssh
     ../modules/fahstats
+    ../modules/kind
   ];
 
   networking = {

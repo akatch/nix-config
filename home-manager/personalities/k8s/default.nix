@@ -10,5 +10,9 @@
       kubernetes-helm
       kubectl
     ];
+
+    sessionVariables = {
+      KUBECTL_EXTERNAL_DIFF = "diff --color=always -u";
+    };
   };
 }

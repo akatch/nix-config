@@ -17,7 +17,8 @@
     homeDirectory = "/home/al";
     packages = with pkgs; [
       pciutils
-      nvtop
+      nvtopPackages.full
+      vagrant
       weechat
     ];
   };

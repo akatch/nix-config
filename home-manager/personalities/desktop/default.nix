@@ -9,13 +9,13 @@
     ./gtk.nix
     ./spotify.nix
     ./swaywm
-    ./syncthing.nix
     ./zathura.nix
   ];
 
   home = {
     packages = with pkgs; [
       keepassxc
+      prusa-slicer
       pulsemixer
       signal-desktop
       zoom-us

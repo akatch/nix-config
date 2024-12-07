@@ -6,6 +6,7 @@
     ../home.nix
     ../personalities/core
     ../personalities/desktop
+    ../personalities/desktop/syncthing.nix
     ../personalities/cli
     ../personalities/cli/rtorrent.nix
     ../personalities/k8s
@@ -15,7 +16,7 @@
     username = "al";
     homeDirectory = "/home/al";
     packages = with pkgs; [
-      prusa-slicer
+      pciutils
       nvtop
       weechat
     ];

@@ -19,6 +19,8 @@
       fortune
       jq
       killall
+      openssl
+      shellcheck
       viddy
       yq
     ];

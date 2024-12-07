@@ -16,7 +16,6 @@
     packages = with pkgs; [
       brightnessctl
       calibre
-      prusa-slicer
       weechat
     ];
   };

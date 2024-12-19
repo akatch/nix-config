@@ -17,7 +17,7 @@
 
     # Get available plugins with `nix-env -f '<nixpkgs>' -qaP -A vimPlugins`
     plugins = with pkgs.vimPlugins; [
-      # TOCO vim-yaml-folds, indentlines, Einenlum/yaml-revealer
+      # TOCO vim-yaml-folds, indentlines
       ale
       ctrlp
       gitgutter
@@ -38,7 +38,7 @@
         set rtp+=~/.vim/bundle/Vundle.vim
         call vundle#begin()
         Plugin 'akatch/vim-oceans'
-        Plugin 'Einenlum/yaml-revealer'
+        "Plugin 'Einenlum/yaml-revealer'
         call vundle#end()
         filetype plugin indent on
         """

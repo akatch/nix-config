@@ -11,7 +11,7 @@
       co = "checkout";
       d = "diff";
       fp = "push --force-with-lease origin HEAD";
-      l = "log --format=oneline -n 10";
+      l = "log --format=oneline -n 10 --abbrev-commit";
       p = "pull";
       poh = "push origin HEAD";
       s = "stash";

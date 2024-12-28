@@ -4,10 +4,11 @@
 }: {
   imports = [
     ../home.nix
+    ../personalities/cli
     ../personalities/core
     ../personalities/desktop
-    ../personalities/cli
     ../personalities/k8s
+    ../personalities/desktop/syncthing.nix
   ];
 
   home = {

@@ -4,9 +4,9 @@
 }: {
   imports = [
     ../modules/ddclient
-    ../modules/ssh
     ../modules/fahstats
     ../modules/kind
+    ../modules/ssh
   ];
 
   networking = {

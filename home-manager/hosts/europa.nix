@@ -5,6 +5,7 @@
   imports = [
     ../home.nix
     ../personalities/cli
+    ../personalities/cli/rtorrent.nix
     ../personalities/core
     ../personalities/desktop
     ../personalities/k8s

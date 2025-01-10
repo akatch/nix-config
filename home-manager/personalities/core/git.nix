@@ -1,4 +1,16 @@
 {
+  programs.gh = {
+    enable = true;
+    settings = {
+      git_protocol = "ssh";
+      aliases = {
+        app = "pr review --approve";
+        co = "pr checkout";
+        d = "pr diff";
+      };
+    };
+  };
+
   programs.git = {
     enable = true;
     userName = "Al Bowles";

@@ -15,6 +15,7 @@
           "browser.search.defaultenginename" = "DuckDuckGo";
           "browser.search.order.1" = "DuckDuckGo";
           "browser.search.openintab" = true;
+          "browser.tabs.hoverPreview.enabled" = false;
           "browser.topsites.contile.enabled" = false;
           "browser.urlbar.openintab" = true;
           "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";

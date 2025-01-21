@@ -22,6 +22,8 @@
           "extensions.pocket.enabled" = false;
           "extensions.webextensions.restrictedDomains" = "";
           "font.minimum-size.x-western" = 18;
+          "app.shield.optoutstudies.enabled" = false;
+          "extensions.htmlaboutaddons.recommendations.enabled" = false;
         };
         search = {
           force = true;

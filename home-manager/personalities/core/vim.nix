@@ -20,10 +20,14 @@
       # TOCO vim-yaml-folds, indentlines
       ale
       ctrlp
+      fzf-vim
+      fzfWrapper
       gitgutter
       nerdtree
       polyglot
       todo-txt-vim
+      vim-zettel
+      vimwiki
     ];
 
     extraConfig = # "${inputs.dotfiles}/.vimrc"
@@ -72,7 +76,8 @@
         nmap <silent> <leader>k :ALEPreviousWrap<CR>
         nmap <silent> <leader>t :NERDTreeToggle<CR>
         nmap <silent> <leader>d :r!date "+\%F \%T"<CR>
-        nmap <silent> <leader>z :VimtexView<CR>
+        nmap <leader>z :tabnew<bar> :ZettelNew<space>
+        nmap <silent> <leader>zo :tabnew<bar> :ZettelOpen<CR>
 
         " pane separators like tmux
         set fillchars+=vert:\│
@@ -125,6 +130,10 @@
         let g:go_doc_url = "https://pkg.go.dev"
 
         let g:gitgutter_async = 1
+
+        " zk
+        let g:vimwiki_list = [{'path':'~/sync/zettelkasten','ext':'.md', 'syntax':'markdown'}]
+        let g:zettel_format = "%Y%m%d%H%M-%title"
 
         hi TabLine       term=none     cterm=none ctermbg=none ctermfg=239
         hi TabLineFill   term=none     cterm=none ctermbg=none ctermfg=233

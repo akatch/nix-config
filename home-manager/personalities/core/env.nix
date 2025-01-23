@@ -30,6 +30,7 @@
       "nrs" = "sudo nixos-rebuild switch --flake .#$(hostname)";
       "se" = "sudo -e";
       "ta" = "tmux attach -t";
+      "z" = "vim -c ZettelOpen";
     };
   };
 }

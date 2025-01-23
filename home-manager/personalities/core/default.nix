@@ -17,10 +17,12 @@
       btop
       dig
       fortune
+      fzf
       jq
       killall
       openssl
       shellcheck
+      silver-searcher
       viddy
       yq
     ];

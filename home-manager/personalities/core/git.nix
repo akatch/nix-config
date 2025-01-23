@@ -22,12 +22,14 @@
       c = "commit";
       co = "checkout";
       d = "diff";
+      dc = "diff --cached";
       fp = "push --force-with-lease origin HEAD";
       l = "log --format=oneline -n 10 --abbrev-commit";
       p = "pull";
       poh = "push origin HEAD";
       s = "stash";
       st = "status -s";
+      sw = "switch";
     };
 
     extraConfig = {

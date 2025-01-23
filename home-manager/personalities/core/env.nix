@@ -21,7 +21,7 @@
     };
 
     shellAliases = {
-      "e" = "vim -p";
+      "e" = "$EDITOR";
       "g" = "git";
       "gr" = "grep -rs";
       "hms" = "home-manager switch --flake .#$(whoami)@$(hostname)";

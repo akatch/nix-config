@@ -62,22 +62,18 @@
         endif
 
         " Keybinds
-        nmap <silent> <C-p> :tabprevious<cr>
-        nmap <silent> <C-n> :tabnext<cr>
-        nmap <silent> <C-t> :tabnew<cr>
+        nmap <silent> <C-p> :bprevious<cr>
+        nmap <silent> <C-n> :bnext<cr>
+        nmap <silent> <C-t> :enew<cr>
 
-        nmap <silent> <C-h> :wincmd h<CR>
-        nmap <silent> <C-j> :wincmd j<CR>
-        nmap <silent> <C-k> :wincmd k<CR>
-        nmap <silent> <C-l> :wincmd l<CR>
         nmap <silent> <leader>n :set number!<CR>
         nmap <silent> <leader>p :set paste!<CR>
         nmap <silent> <leader>j :ALENextWrap<CR>
         nmap <silent> <leader>k :ALEPreviousWrap<CR>
         nmap <silent> <leader>t :NERDTreeToggle<CR>
         nmap <silent> <leader>d :r!date "+\%F \%T"<CR>
-        nmap <leader>z :tabnew<bar> :ZettelNew<space>
-        nmap <silent> <leader>zo :tabnew<bar> :ZettelOpen<CR>
+        nmap <leader>z :ZettelNew<space>
+        nmap <silent> <leader>zo :ZettelOpen<CR>
 
         " pane separators like tmux
         set fillchars+=vert:\│

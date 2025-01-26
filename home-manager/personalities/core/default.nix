@@ -17,7 +17,6 @@
       btop
       dig
       fortune
-      fzf
       jq
       killall
       openssl

@@ -22,6 +22,7 @@
       openssl
       shellcheck
       silver-searcher
+      unzip
       viddy
       yq
     ];

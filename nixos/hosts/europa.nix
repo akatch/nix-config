@@ -4,8 +4,8 @@
 }: {
   imports = [
     ../modules/backups
-    ../modules/ssh
     ../modules/fahstats
+    ../modules/ssh
     ../modules/vault
   ];
 

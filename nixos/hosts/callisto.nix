@@ -7,6 +7,7 @@
     ../modules/fahstats
     ../modules/kind
     ../modules/ssh
+    ../modules/vault
   ];
 
   networking = {

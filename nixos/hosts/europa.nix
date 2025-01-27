@@ -3,6 +3,7 @@
   ...
 }: {
   imports = [
+    ../modules/backups
     ../modules/ssh
     ../modules/fahstats
     ../modules/vault

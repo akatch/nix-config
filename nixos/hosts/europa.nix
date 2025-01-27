@@ -5,6 +5,7 @@
   imports = [
     ../modules/ssh
     ../modules/fahstats
+    ../modules/vault
   ];
 
   networking = {

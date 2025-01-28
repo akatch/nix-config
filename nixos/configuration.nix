@@ -33,8 +33,12 @@
     pulse.enable = true;
   };
 
-  services.tzupdate.enable = true;
+  services.locate = {
+    enable = true;
+    package = pkgs.mlocate;
+  };
 
+  services.tzupdate.enable = true;
   # garbage collection
   nix.gc = {
     automatic = true;
@@ -63,6 +67,5 @@
 
   environment.systemPackages = with pkgs; [
     vim
-    mlocate
   ];
 }

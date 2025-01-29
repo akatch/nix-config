@@ -7,6 +7,7 @@
     ./direnv.nix
     ./env.nix
     ./git.nix
+    ./gpg.nix
     ./tmux.nix
     ./vim.nix
     ./zsh.nix

@@ -18,7 +18,7 @@
         set -e
 
         DATE="$(date +%F)"
-        SOURCES="$HOME/pictures $HOME/code $HOME/documents"
+        SOURCES="$HOME/pictures $HOME/code $HOME/documents $HOME/.gnupg"
         DEST="$HOME/backups"
         OFFSITE_DEST="/mnt/vault/$USER"
 

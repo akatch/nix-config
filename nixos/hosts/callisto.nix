@@ -4,8 +4,7 @@
 }: {
   imports = [
     ../modules/ddclient
-    ../modules/fahstats
-    ../modules/kind
+    ../modules/kubernetes/master.nix
     ../modules/ssh
     ../modules/vault
   ];

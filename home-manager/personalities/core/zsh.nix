@@ -3,7 +3,6 @@
     enable = true;
     enableCompletion = true;
     autocd = true;
-    #historySubstringSearch.enable = true;
 
     history = {
       expireDuplicatesFirst = true;
@@ -41,8 +40,11 @@
       export LESS_TERMCAP_ue=$'\e[0m'
       export LESS_TERMCAP_me=$'\e[0m'
       export LESS_TERMCAP_se=$'\e[0m'
-      export PS1="%F{237}%m%f %F{%(?.64.208)}%~%f %F{%(?.64.208)}%#%f "
       fortune
       '';
+
+    syntaxHighlighting = {
+      enable = true;
+    };
   };
 }

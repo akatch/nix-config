@@ -29,5 +29,9 @@
     packages = with pkgs; [
       pinentry
     ];
+
+    sessionVariables = {
+      GPG_TTY = "$(tty)";
+    };
   };
 }

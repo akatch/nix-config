@@ -5,7 +5,6 @@
     ];
 
     sessionVariables = {
-      GPG_TTY = "$(tty)";
       GREP_COLORS = "mt=38;5;214:sl=:cx=:fn=38;5;236:ln=32:bn=32:se = '38;5;233'";
       GREP_COLOR = "38;5;214";
       EDITOR = "vim";

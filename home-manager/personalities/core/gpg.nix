@@ -26,9 +26,9 @@
   };
 
   home = {
-    packages = with pkgs; [
-      pinentry
-    ];
+    packages = with pkgs; []
+    ++ (pkgs.lib.optionals pkgs.stdenv.isLinux [ pinentry ])
+    ++ (pkgs.lib.optionals pkgs.stdenv.isDarwin [ pinentry_mac ]);
 
     sessionVariables = {
       GPG_TTY = "$(tty)";

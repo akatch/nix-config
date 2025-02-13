@@ -12,9 +12,9 @@
   networking = {
     hostName = "europa";
     wireless = {
-      environmentFile = "/etc/nixos/wireless.env";
+      secretsFile = "/etc/nixos/wireless.env";
       networks = {
-        WifiIsComing.psk = "@PSK_HOME@";
+        WifiIsComing.pskRaw = "ext:PSK_HOME";
       };
     };
   };

@@ -8,6 +8,6 @@
     protocol = "namecheap";
     server = "dynamicdns.park-your-domain.com";
     username = "raktajino.club";
-    use = "web, web=dynamicdns.park-your-domain.com/getip";
+    usev4 = "web, web=dynamicdns.park-your-domain.com/getip";
   };
 }

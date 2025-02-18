@@ -3,6 +3,7 @@
   ...
 }: {
   imports = [
+    ../modules/amdgpu
     ../modules/ddclient
     ../modules/kubernetes/master.nix
     ../modules/ssh

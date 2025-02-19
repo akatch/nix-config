@@ -5,11 +5,10 @@
   imports = [
     ../home.nix
     ../personalities/cli
-    ../personalities/cli/rtorrent.nix
     ../personalities/core
     ../personalities/desktop
+    ../personalities/filesharing
     ../personalities/k8s
-    ../personalities/desktop/syncthing.nix
   ];
 
   home = {

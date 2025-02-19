@@ -6,9 +6,8 @@
     ../home.nix
     ../personalities/core
     ../personalities/desktop
-    ../personalities/desktop/syncthing.nix
     ../personalities/cli
-    ../personalities/cli/rtorrent.nix
+    ../personalities/filesharing
     ../personalities/k8s
   ];
 

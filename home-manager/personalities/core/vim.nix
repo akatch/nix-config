@@ -129,7 +129,7 @@
 
         " zk
         let g:vimwiki_list = [{'path':'~/sync/zettelkasten','ext':'.md', 'syntax':'markdown'}]
-        let g:zettel_format = "%Y%m%d%H%M-%title"
+        let g:zettel_format = "%Y%m%d%H%M"
 
         hi TabLine       term=none     cterm=none ctermbg=none ctermfg=239
         hi TabLineFill   term=none     cterm=none ctermbg=none ctermfg=233

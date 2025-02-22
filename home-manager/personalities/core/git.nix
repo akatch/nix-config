@@ -27,6 +27,7 @@
       l = "log --format=oneline -n 10 --abbrev-commit";
       p = "pull";
       poh = "push origin HEAD";
+      pdh = "push downstream HEAD";
       s = "stash";
       st = "status -s";
       sw = "switch";

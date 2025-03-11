@@ -14,6 +14,7 @@
   home = {
     packages = with pkgs; [
       sway-contrib.grimshot
+      dmenu-wayland
     ];
   };
 }

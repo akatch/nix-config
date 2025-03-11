@@ -28,7 +28,7 @@
         horizontal_padding = 20;
         separator_color = "frame";
         separator_height = 1;
-        dmenu = "dmenu -p dunst:";
+        dmenu = "dmenu-wl -p dunst:";
         browser = "firefox -new-tab";
         min_icon_size = 50;
         max_icon_size = 125;

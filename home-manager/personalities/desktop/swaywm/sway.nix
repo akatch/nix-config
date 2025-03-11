@@ -139,7 +139,7 @@
         "XF86MonBrightnessDown" = " exec brightnessctl set 10%-";
         "XF86MonBrightnessUp" = "exec brightnessctl set 10%+";
       };
-      menu = "dmenu_run -i -sb '${darkgray}' -sf '${brightgreen}' -nb '${black}' -nf '${foreground}' -fn 'monospace:size=18'";
+      menu = "dmenu-wl_run -i -sb '${darkgray}' -sf '${brightgreen}' -nb '${background}' -nf '${foreground}' -fn 'monospace 18'";
       modifier = "Mod4";
       output = {
         "*" = {

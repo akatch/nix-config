@@ -17,10 +17,11 @@
       NIX_CONFIG = "experimental-features = nix-command flakes";
       QUOTING_STYLE = "literal";
       VISUAL = "$EDITOR";
+      ZETTEL_DIR = "$HOME/sync/zettelkasten";
     };
 
     shellAliases = {
-      "e" = "$EDITOR";
+      "e" = "vim";
       "g" = "git";
       "gr" = "grep -rs";
       "hms" = "home-manager switch --flake .#$(whoami)@$(hostname)";

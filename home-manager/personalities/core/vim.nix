@@ -128,7 +128,7 @@
         let g:gitgutter_async = 1
 
         " zk
-        let g:vimwiki_list = [{'path': '$HOME/$ZETTEL_DIR','ext':'.md', 'syntax':'markdown'}]
+        let g:vimwiki_list = [{'path': '%{$HOME}/%{$ZETTEL_DIR}','ext':'.md', 'syntax':'markdown'}]
         let g:zettel_format = "%Y%m%d%H%M"
 
         hi TabLine       term=none     cterm=none ctermbg=none ctermfg=239

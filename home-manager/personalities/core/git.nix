@@ -39,7 +39,6 @@
 
     extraConfig = {
       branch.sort = "-committerdate";
-      column.ui = "auto";
       commit.verbose = true;
       diff = {
         algorithm = "histogram";

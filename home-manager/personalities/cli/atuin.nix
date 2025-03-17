@@ -1,7 +1,7 @@
 {
   programs.atuin = {
     enable = true;
-    #enableZshIntegration = true;
+    enableZshIntegration = false;
     # https://docs.atuin.sh/configuration/config/
     settings = {
       style = "compact";

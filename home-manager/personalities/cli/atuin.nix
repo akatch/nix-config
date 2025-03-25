@@ -10,6 +10,13 @@
       show_tabs = false;
       enter_accept = true;
       keymap_mode = "vim-insert";
+      history_filter = [
+        "^g c"
+        "^g d"
+        "^g b"
+        "^g st"
+        "^g co .*"
+      ];
     };
   };
 }

@@ -51,6 +51,8 @@
         set nohlsearch cursorline
         set wildmode=longest,list,full
         set wildmenu
+        set splitbelow
+        set splitright
         filetype plugin indent on
         autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
         autocmd BufNew,BufNewFile,BufRead *todo.txt setlocal ft=todo.txt

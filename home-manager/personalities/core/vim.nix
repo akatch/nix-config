@@ -68,6 +68,10 @@
         nmap <silent> <C-n> :bnext<cr>
         nmap <silent> <C-t> :enew<cr>
 
+        "" use space as leader
+        nnoremap <SPACE> <Nop>
+        let mapleader=" "
+
         nmap <silent> <leader>n :set number!<CR>
         nmap <silent> <leader>p :set paste!<CR>
         nmap <silent> <leader>j :ALENextWrap<CR>

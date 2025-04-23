@@ -136,7 +136,6 @@
         " zk
         let g:vimwiki_list = [{'path': $ZETTEL_DIR,'ext':'.md', 'syntax':'markdown'}]
         let g:zettel_format = "%Y%m%d%H%M%S"
-        let g:vimwiki_markdown_link_ext = 1
 
         hi TabLine       term=none     cterm=none ctermbg=none ctermfg=239
         hi TabLineFill   term=none     cterm=none ctermbg=none ctermfg=233

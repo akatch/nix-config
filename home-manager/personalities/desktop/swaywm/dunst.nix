@@ -5,7 +5,7 @@
       global = {
         font = "monospace 18";
         markup = "full";
-        format = "<b>%s</b>\n%b";
+        format = "<b>%s</b>\\n%b";
         sort = "true";
         indicate_hidden = true;
         alignment = "left";

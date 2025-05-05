@@ -80,6 +80,7 @@
         nmap <silent> <leader>d :r!date "+\%F \%T"<CR>
         nmap <leader>z :ZettelNew<space>
         nmap <silent> <leader>zo :ZettelOpen<CR>
+        nmap <silent> <leader>o :VimwikiFollowLink<CR>
 
         " pane separators like tmux
         set fillchars+=vert:\│

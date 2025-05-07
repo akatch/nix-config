@@ -50,7 +50,7 @@
 
             status = {
               newColor = "steelblue";
-              modifyColor = "powderblue";
+              modifyColor = "yellow";
               addColor = "lightskyblue";
               errorColor = "#ff8700";
               highlightcolor = "royalblue";

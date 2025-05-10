@@ -22,9 +22,13 @@
         compinit
       '';
 
-    initContent =
+    initExtra =
       ''
       setopt INC_APPEND_HISTORY
+      h() {
+          history | grep --color=auto $1
+      }
+
       ghclone() {
           git clone git@github.com:$1 ~/code/github.com/$1
       }

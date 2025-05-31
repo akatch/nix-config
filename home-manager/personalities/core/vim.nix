@@ -85,6 +85,16 @@
         " pane separators like tmux
         set fillchars+=vert:\│
 
+        " State directories
+        for dir in [ 'undo' ]
+            if !isdirectory($HOME . '/.vim/' . dir)
+                call mkdir($HOME . '/.vim/' . dir, 'p')
+            endif
+        endfor
+
+        set undodir^=~/.vim/undo/
+        set undofile
+
         " ctrlp
         let g:ctrlp_map = '<s-f>'
         let g:ctrlp_switch_buffer = 'Et'

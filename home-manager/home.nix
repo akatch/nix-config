@@ -11,6 +11,12 @@
     };
   };
 
+  nix.gc = {
+    automatic = true;
+    frequency = "weekly";
+    options = "--delete-older-than 5d";
+  };
+
   programs.home-manager.enable = true;
 
   # Nicely reload system units when changing configs

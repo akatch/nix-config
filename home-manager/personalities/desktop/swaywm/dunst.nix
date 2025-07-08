@@ -19,7 +19,6 @@
         transparency = 0;
         idle_threshold = 30;
         follow = "none";
-        monitor = 1;
         sticky_history = true;
         history_length = 20;
         show_indicators = false;
@@ -51,21 +50,18 @@
         background = "#121212";
         foreground = "#767676";
         timeout = 30;
-        icon = "dialog-information-symbolic";
       };
 
       urgency_normal = {
         background = "#121212";
         foreground = "#5f8700";
         timeout = 30;
-        icon = "dialog-information-symbolic";
       };
 
       urgency_critical = {
         background = "#121212";
         foreground = "#ffaf00";
         timeout = 60;
-        icon = "dialog-error-symbolic";
       };
     };
   };

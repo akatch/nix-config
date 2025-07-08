@@ -136,10 +136,10 @@
         "XF86AudioPlay" = "exec playerctl -p spotify play-pause";
         "XF86AudioNext" = "exec playerctl -p spotify next";
         "XF86AudioPrev" = "exec playerctl -p spotify position 0";
-        "XF86MonBrightnessDown" = " exec brightnessctl set 10%-";
-        "XF86MonBrightnessUp" = "exec brightnessctl set 10%+";
+        "XF86MonBrightnessDown" = " exec brightnessctl set 5%-";
+        "XF86MonBrightnessUp" = "exec brightnessctl set 5%+";
       };
-      menu = "dmenu-wl_run -i -sb '${darkgray}' -sf '${brightgreen}' -nb '${background}' -nf '${foreground}' -fn 'monospace 18'";
+      menu = "dmenu-wl_run -i -sb '${darkgray}' -sf '${brightgreen}' -nb '${background}' -nf '${foreground}' -fn 'monospace 18' -h 30";
       modifier = "Mod4";
       output = {
         "*" = {

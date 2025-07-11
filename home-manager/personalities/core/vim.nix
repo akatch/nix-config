@@ -159,6 +159,9 @@
         hi link GitGutterChange DiffChange
         hi link GitGutterDelete DiffDelete
         hi link GitGutterChangeDelete DiffChange
+
+        " nerdtree
+        let g:NERDTreeWinPos = "right"
       '';
   };
 }

@@ -23,7 +23,7 @@
     shellAliases = {
       "e" = "vim";
       "g" = "git";
-      "gr" = "grep -rs";
+      "gr" = "grep -rs --exclude-dir=.git";
       "hms" = "home-manager switch --flake .#$(whoami)@$(hostname)";
       "l" = "ls -lhG";
       "lah" = "ls -lahG";

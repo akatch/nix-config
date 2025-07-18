@@ -28,6 +28,7 @@
       p = "pull";
       poh = "push origin HEAD";
       pdh = "push downstream HEAD";
+      rpo = "remote prune origin";
       s = "stash";
       st = "status -s";
       sw = "switch";

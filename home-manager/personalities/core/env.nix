@@ -21,12 +21,14 @@
     };
 
     shellAliases = {
+      "drs" = "darwin-rebuild switch --flake .#$(hostname)";
       "e" = "vim";
       "g" = "git";
       "gr" = "grep -rs --exclude-dir=.git";
       "hms" = "home-manager switch --flake .#$(whoami)@$(hostname)";
       "l" = "ls -lhG";
       "lah" = "ls -lahG";
+      "nfu" = "nix flake update";
       "nrs" = "sudo nixos-rebuild switch --flake .#$(hostname)";
       "se" = "sudo -e";
       "ta" = "tmux attach -t";

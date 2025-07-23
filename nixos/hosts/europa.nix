@@ -13,7 +13,10 @@
     hostName = "europa";
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 6924 ];
+      allowedTCPPorts = [
+        6924
+        8080
+      ];
     };
     wireless = {
       secretsFile = "/etc/nixos/wireless.env";

@@ -6,7 +6,6 @@
     ../modules/amdgpu
     ../modules/backups
     ../modules/ddclient
-    ../modules/kubernetes/master.nix
     ../modules/podman
     ../modules/ssh
     ../modules/vault

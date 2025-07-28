@@ -42,7 +42,7 @@
         set rtp+=~/.vim/bundle/Vundle.vim
         call vundle#begin()
         Plugin 'akatch/vim-oceans'
-        "Plugin 'Einenlum/yaml-revealer'
+        Plugin 'pasky/claude.vim'
         call vundle#end()
         filetype plugin indent on
         """
@@ -147,6 +147,9 @@
         " zk
         let g:vimwiki_list = [{'path': $ZETTEL_DIR,'ext':'.md', 'syntax':'markdown'}]
         let g:zettel_format = "%Y%m%d%H%M%S"
+
+        " claude
+        let g:claude_api_key = $CLAUDE_API_KEY
 
         hi TabLine       term=none     cterm=none ctermbg=none ctermfg=239
         hi TabLineFill   term=none     cterm=none ctermbg=none ctermfg=233

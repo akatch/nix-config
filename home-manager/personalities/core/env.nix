@@ -21,7 +21,7 @@
     };
 
     shellAliases = {
-      "drs" = "darwin-rebuild switch --flake .#$(hostname)";
+      "drs" = "sudo darwin-rebuild switch --flake .#$(hostname)";
       "e" = "vim";
       "g" = "git";
       "gr" = "grep -rs --exclude-dir=.git";

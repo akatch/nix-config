@@ -26,6 +26,7 @@
       nerdtree
       polyglot
       todo-txt-vim
+      vim-latex-live-preview
       vim-zettel
       vimwiki
     ];
@@ -150,6 +151,9 @@
 
         " claude
         let g:claude_api_key = $CLAUDE_API_KEY
+
+        " latex
+        let g:livepreview_previewer = 'zathura'
 
         hi TabLine       term=none     cterm=none ctermbg=none ctermfg=239
         hi TabLineFill   term=none     cterm=none ctermbg=none ctermfg=233

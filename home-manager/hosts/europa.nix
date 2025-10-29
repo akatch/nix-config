@@ -9,6 +9,7 @@
     ../personalities/desktop
     ../personalities/filesharing
     ../personalities/k8s
+    ../tools/tex
   ];
 
   home = {

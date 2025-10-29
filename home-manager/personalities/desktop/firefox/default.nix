@@ -12,8 +12,8 @@
           "browser.newtabpage.activity-stream.showSponsored" = false;
           "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
           "browser.newtabpage.activity-stream.system.showSponsored" = false;
-          "browser.search.defaultenginename" = "DuckDuckGo";
-          "browser.search.order.1" = "DuckDuckGo";
+          "browser.search.defaultenginename" = "ddg";
+          "browser.search.order.1" = "ddg";
           "browser.search.openintab" = true;
           "browser.tabs.hoverPreview.enabled" = false;
           "browser.topsites.contile.enabled" = false;
@@ -29,7 +29,7 @@
           force = true;
           default = "ddg";
           order = [
-            "DuckDuckGo"
+            "ddg"
             "Wikipedia"
           ];
         };

@@ -22,6 +22,8 @@
       secretsFile = "/etc/nixos/wireless.env";
       networks = {
         WifiIsComing.pskRaw = "ext:PSK_HOME";
+        PfizerNet_5G.pskRaw = "ext:PSK_HOTSPOT";
+        STARLINK.pskRaw = "ext:PSK_BE";
       };
     };
   };

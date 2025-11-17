@@ -22,7 +22,7 @@
         compinit
       '';
 
-    initExtra =
+    initContent =
       ''
       setopt INC_APPEND_HISTORY
       h() {

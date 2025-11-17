@@ -14,7 +14,7 @@
       "nocaseglob"
     ];
 
-    initExtra =
+    initContent =
       ''
       # history search like zsh
       bind '"\e[A": history-search-backward'

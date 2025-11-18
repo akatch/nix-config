@@ -12,29 +12,33 @@
   };
 
   programs.git = {
-    settings = {
-      enable = true;
-      userName = "Al Bowles";
-      userEmail = "bowlesan@proton.me";
+    enable = true;
+    userName = "Al Bowles";
+    userEmail = "bowlesan@proton.me";
 
-      aliases = {
-        a = "add";
-        b = "branch";
-        c = "commit";
-        co = "checkout";
-        d = "diff";
-        dc = "diff --cached";
-        fp = "push --force-with-lease origin HEAD";
-        l = "log --format=oneline -n 10 --abbrev-commit";
-        p = "pull";
-        poh = "push origin HEAD";
-        pdh = "push downstream HEAD";
-        rpo = "remote prune origin";
-        s = "stash";
-        st = "status -s";
-        sw = "switch";
-      };
+    aliases = {
+      a = "add";
+      b = "branch";
+      c = "commit";
+      co = "checkout";
+      d = "diff";
+      dc = "diff --cached";
+      fp = "push --force-with-lease origin HEAD";
+      l = "log --format=oneline -n 10 --abbrev-commit";
+      p = "pull";
+      poh = "push origin HEAD";
+      pdh = "push downstream HEAD";
+      rpo = "remote prune origin";
+      s = "stash";
+      st = "status -s";
+      sw = "switch";
+    };
 
+    signing = {
+      key = "D2E81FDAB5928BBC";
+    };
+
+    extraConfig = {
       branch.sort = "-committerdate";
       commit.verbose = true;
       diff = {
@@ -69,10 +73,6 @@
         autoupdate = true;
       };
       tag.sort = "version:refname";
-    };
-
-    signing = {
-      key = "D2E81FDAB5928BBC";
     };
   };
 }

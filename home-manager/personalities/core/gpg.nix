@@ -27,7 +27,7 @@
 
   home = {
     packages = with pkgs; []
-    ++ (pkgs.lib.optionals pkgs.stdenv.isLinux [ pinentry ])
+    ++ (pkgs.lib.optionals pkgs.stdenv.isLinux [ pinentry-curses ])
     ++ (pkgs.lib.optionals pkgs.stdenv.isDarwin [ pinentry_mac ]);
 
     sessionVariables = {

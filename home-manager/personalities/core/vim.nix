@@ -26,7 +26,6 @@
       nerdtree
       polyglot
       todo-txt-vim
-      vim-latex-live-preview
       vim-zettel
       vimwiki
     ];

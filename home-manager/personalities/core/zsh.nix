@@ -25,13 +25,6 @@
     initContent =
       ''
       setopt INC_APPEND_HISTORY
-      h() {
-          history | grep --color=auto $1
-      }
-
-      ghclone() {
-          git clone git@github.com:$1 ~/code/github.com/$1
-      }
 
       export LESS_TERMCAP_mb=$'\e[38;5;24m'
       export LESS_TERMCAP_md=$'\e[01;38;5;28m'
@@ -42,6 +35,16 @@
       export LESS_TERMCAP_se=$'\e[0m'
       fortune
       '';
+
+      siteFunctions = {
+        h = ''
+          history | grep --color=auto $1
+        '';
+
+        ghclone = ''
+          git clone git@github.com:$1 ~/code/github.com/$1
+        '';
+      };
 
     syntaxHighlighting = {
       enable = true;

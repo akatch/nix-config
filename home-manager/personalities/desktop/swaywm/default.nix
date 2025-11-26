@@ -4,7 +4,7 @@
 }: {
   imports = [
     ./dunst.nix
-    ./foot.nix
+    ../../../shells/foot
     ./i3status.nix
     ./sway.nix
     ./swayidle.nix

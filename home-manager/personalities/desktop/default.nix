@@ -3,7 +3,7 @@
   ...
 }: {
   imports = [
-    ./alacritty.nix
+    ../../shells/alacritty
     ./firefox
     ./fonts.nix
     ./gtk.nix

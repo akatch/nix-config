@@ -148,6 +148,27 @@
         let g:vimwiki_list = [{'path': $ZETTEL_DIR,'ext':'.md', 'syntax':'markdown'}]
         let g:zettel_format = "%Y%m%d%H%M%S"
 
+        " Usage:
+        ":call ZettelNewWithTemplate("My Note", "$ZETTEL_DIR/custom-template.tpl")
+        function! ZettelNewWithTemplate(title, template)
+
+          " Generate timestamp-based filename
+          " FIXME honor g:zettel_format, g:vimwiki_list
+          let l:filename = strftime("%Y%m%d%H%M%S") . ".md"
+          let l:filepath = expand("%:p:h") . "/" . l:filename
+
+          " Read template into new buffer
+          execute "edit " . l:filepath
+          execute "0read " . a:template
+          " Replace template variables
+          %s/%title/\=a:title/ge
+          %s/%date/\=strftime("%Y-%m-%d %H:%M")/ge
+          %s/%id/\=l:filename/ge
+
+          " Remove extra blank line at top
+          1delete _
+        endfunction
+
         " claude
         let g:claude_api_key = $CLAUDE_API_KEY
 

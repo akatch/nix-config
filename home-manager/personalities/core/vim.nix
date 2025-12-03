@@ -169,6 +169,10 @@
           1delete _
         endfunction
 
+        " Usage:
+        ":ZettelTemplate "My Note Title" "$ZETTEL_DIR/special.tpl"
+        command! -nargs=+ ZettelTemplate call ZettelNewWithTemplate(<f-args>)
+
         " claude
         let g:claude_api_key = $CLAUDE_API_KEY
 

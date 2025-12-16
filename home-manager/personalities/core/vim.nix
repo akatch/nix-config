@@ -77,7 +77,7 @@
         nmap <silent> <leader>j :ALENextWrap<CR>
         nmap <silent> <leader>k :ALEPreviousWrap<CR>
         nmap <silent> <leader>t :NERDTreeToggle<CR>
-        nmap <silent> <leader>d :r!date "+\%F \%T"<CR>
+        nmap <leader>d a<C-R>=strftime("%F %T")<CR><Esc>
         nmap <leader>z :ZettelNew<space>
         nmap <silent> <leader>zo :ZettelOpen<CR>
         nmap <silent> <leader>o :VimwikiFollowLink<CR>

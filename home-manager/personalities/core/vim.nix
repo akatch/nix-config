@@ -164,9 +164,6 @@
           %s/%title/\=a:title/ge
           %s/%date/\=strftime("%Y-%m-%d %H:%M")/ge
           %s/%id/\=l:filename/ge
-
-          " Remove extra blank line at top
-          1delete _
         endfunction
 
         " Usage:

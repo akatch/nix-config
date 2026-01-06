@@ -8,6 +8,7 @@
         isDefault = true;
         settings = {
           "browser.aboutConfig.showWarning" = false;
+          "browser.ml.enable" = false;
           "browser.newtabpage.pinned" = "";
           "browser.newtabpage.activity-stream.showSponsored" = false;
           "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;

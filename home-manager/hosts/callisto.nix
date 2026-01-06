@@ -6,8 +6,9 @@
     ../home.nix
     ../personalities/core
     ../personalities/cli
-    ../personalities/filesharing
     ../personalities/k8s
+    ../tools/rtorrent
+    ../tools/syncthing
   ];
 
   home = {

@@ -25,6 +25,7 @@
       gitgutter
       nerdtree
       polyglot
+      statix
       todo-txt-vim
       vim-zettel
       vimwiki
@@ -111,6 +112,7 @@
         \   'go': ['goimports', 'gofmt', 'gopls'],
         \   'javascript': ['prettier'],
         \   'json': ['jq'],
+        \   'nix': ['statix'],
         \   'terraform': ['terraform'],
         \}
 

@@ -21,7 +21,6 @@
       jq
       killall
       openssl
-      pre-commit
       shellcheck
       silver-searcher
       unzip

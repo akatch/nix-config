@@ -19,7 +19,7 @@
 
   networking.wireless = {
     enable = true;
-    userControlled.enable = true;
+    userControlled = true;
   };
 
   programs.sway.enable = true;

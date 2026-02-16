@@ -13,9 +13,13 @@
     ./hardware-configuration.nix
   ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    kernelModules = [ "kvm-amd" "kvm-intel" ];
+  };
 
   networking.wireless = {
     enable = true;
@@ -27,24 +31,26 @@
 
   hardware.bluetooth.enable = true;
 
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
-  };
+  services = {
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
 
-  services.locate = {
-    enable = true;
-    package = pkgs.mlocate;
-  };
+    locate = {
+      enable = true;
+      package = pkgs.mlocate;
+    };
 
-  services.tzupdate.enable = true;
-
-  services.printing.enable = true;
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      pulse.enable = true;
+    };
+    
+    printing.enable = true;
+    tzupdate.enable = true;
   };
 
   # garbage collection

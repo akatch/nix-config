@@ -19,12 +19,12 @@
     plugins = with pkgs.vimPlugins; [
       # TOCO vim-yaml-folds, indentlines
       ale
-      ctrlp
+      ctrlp-vim
       fzf-vim
-      fzfWrapper
-      gitgutter
+      fzf-wrapper
+      vim-gitgutter
       nerdtree
-      polyglot
+      vim-polyglot
       statix
       todo-txt-vim
       vim-zettel

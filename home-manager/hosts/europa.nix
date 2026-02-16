@@ -19,6 +19,7 @@
     packages = with pkgs; [
       brightnessctl
       calibre
+      protonvpn-gui
       weechat
     ];
   };

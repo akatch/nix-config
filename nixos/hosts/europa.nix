@@ -5,6 +5,7 @@
   imports = [
     ../modules/backups
     ../modules/fahstats
+    ../modules/protonvpn
     ../modules/ssh
     ../modules/vault
   ];

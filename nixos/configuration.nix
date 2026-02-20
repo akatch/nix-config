@@ -21,15 +21,7 @@
     kernelModules = [ "kvm-amd" "kvm-intel" ];
   };
 
-  networking.wireless = {
-    enable = true;
-    userControlled = true;
-  };
-
-  programs.sway.enable = true;
   programs.zsh.enable = true;
-
-  hardware.bluetooth.enable = true;
 
   services = {
     avahi = {
@@ -42,15 +34,6 @@
       enable = true;
       package = pkgs.mlocate;
     };
-
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      pulse.enable = true;
-    };
-    
-    printing.enable = true;
-    tzupdate.enable = true;
   };
 
   # garbage collection
@@ -58,19 +41,6 @@
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 5d";
-  };
-
-  # podman
-  # from https://nixos.wiki/wiki/Podman
-  virtualisation = {
-    podman = {
-      enable = true;
-      defaultNetwork.settings.dns_enabled = true;
-    };
-
-    libvirtd = {
-      enable = true;
-    };
   };
 
   users.users.al = {

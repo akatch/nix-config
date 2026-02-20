@@ -5,10 +5,20 @@
   imports = [
     ../modules/backups
     ../modules/fahstats
+    ../modules/podman
     ../modules/protonvpn
+    ../modules/sound
     ../modules/ssh
     ../modules/vault
   ];
+
+  hardware.bluetooth.enable = true;
+  programs.sway.enable = true;
+
+  services = {
+    printing.enable = true;
+    tzupdate.enable = true;
+  };
 
   networking = {
     hostName = "europa";
@@ -20,6 +30,8 @@
       ];
     };
     wireless = {
+      enable = true;
+      userControlled = true;
       secretsFile = "/etc/nixos/wireless.env";
       networks = {
         WifiIsComing.pskRaw = "ext:PSK_HOME";

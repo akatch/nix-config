@@ -24,12 +24,6 @@
   programs.zsh.enable = true;
 
   services = {
-    avahi = {
-      enable = true;
-      nssmdns4 = true;
-      openFirewall = true;
-    };
-
     locate = {
       enable = true;
       package = pkgs.mlocate;

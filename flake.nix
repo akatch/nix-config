@@ -38,6 +38,15 @@
           ./nixos/hosts/callisto.nix
         ];
       };
+      eupheme = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs outputs;
+        };
+        modules = [
+          ./nixos/configuration.nix
+          ./nixos/hosts/eupheme.nix
+        ];
+      };
     };
 
     # Standalone home-manager configuration entrypoint
@@ -59,6 +68,15 @@
         };
         modules = [
           ./home-manager/hosts/callisto.nix
+        ];
+      };
+      "al@eupheme" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {
+          inherit inputs outputs;
+        };
+        modules = [
+          ./home-manager/hosts/eupheme.nix
         ];
       };
     };

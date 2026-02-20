@@ -18,6 +18,7 @@
       MANWIDTH = "60";
       MANROFFOPT = "-c";
       NIX_CONFIG = "experimental-features = nix-command flakes";
+      QT_SCALE_FACTOR = "1.5";
       QUOTING_STYLE = "literal";
       VISUAL = lib.mkDefault "$EDITOR";
       ZETTEL_DIR = "$HOME/sync/zettelkasten";

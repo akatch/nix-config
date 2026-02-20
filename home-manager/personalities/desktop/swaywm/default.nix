@@ -15,6 +15,7 @@
     packages = with pkgs; [
       sway-contrib.grimshot
       dmenu-wayland
+      wl-clipboard
     ];
   };
 }

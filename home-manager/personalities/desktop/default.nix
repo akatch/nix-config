@@ -18,7 +18,6 @@
       prusa-slicer
       pulsemixer
       signal-desktop
-      zoom-us
     ];
   };
 }

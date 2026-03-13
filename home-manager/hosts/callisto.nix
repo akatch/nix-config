@@ -1,10 +1,10 @@
 {
   pkgs,
-  config,
   ...
 }: {
   imports = [
     ../home.nix
+    ../platforms/linux
     ../personalities/core
     ../personalities/cli
     ../personalities/k8s
@@ -14,7 +14,6 @@
 
   home = {
     username = "al";
-    homeDirectory = "/home/${config.home.username}";
     packages = with pkgs; [
       pciutils
       nvtopPackages.full

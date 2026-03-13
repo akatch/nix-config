@@ -1,10 +1,10 @@
 {
   pkgs,
-  config,
   ...
 }: {
   imports = [
     ../home.nix
+    ../platforms/linux
     ../personalities/cli
     ../personalities/core
     ../personalities/desktop
@@ -16,7 +16,6 @@
 
   home = {
     username = "al";
-    homeDirectory = "/home/${config.home.username}";
     packages = with pkgs; [
       brightnessctl
       calibre

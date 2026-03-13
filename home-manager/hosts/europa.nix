@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   ...
 }: {
   imports = [
@@ -15,7 +16,7 @@
 
   home = {
     username = "al";
-    homeDirectory = "/home/al";
+    homeDirectory = "/home/${config.home.username}";
     packages = with pkgs; [
       brightnessctl
       calibre

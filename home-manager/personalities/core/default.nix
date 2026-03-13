@@ -25,6 +25,7 @@
       silver-searcher
       unzip
       viddy
+      whois
       yq
     ];
   };

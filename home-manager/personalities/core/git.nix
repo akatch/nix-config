@@ -75,6 +75,7 @@
 
     signing = {
       key = "D2E81FDAB5928BBC";
+      format = null;
     };
   };
 }

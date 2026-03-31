@@ -82,6 +82,7 @@
         nmap <leader>z :ZettelNew<space>
         nmap <silent> <leader>zo :ZettelOpen<CR>
         nmap <silent> <leader>o :VimwikiFollowLink<CR>
+        nmap <silent> <leader>cf :let @+=expand('%:p')<CR>
 
         " pane separators like tmux
         set fillchars+=vert:\│

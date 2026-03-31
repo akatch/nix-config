@@ -6,6 +6,7 @@
 }: {
   nixpkgs = {
     config = {
+      allowAliases = false;
       allowUnfree = true;
       allowUnfreePredicate = _: true;
     };

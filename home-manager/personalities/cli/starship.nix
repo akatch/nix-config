@@ -1,14 +1,4 @@
 {
-  config,
-  ...
-}: {
-
-  home = {
-    sessionVariables = {
-      STARSHIP_CONFIG = "$HOME/.config/starship.toml";
-    };
-  };
-
   programs.starship = {
     enable = true;
     enableZshIntegration = true;

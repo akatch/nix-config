@@ -35,6 +35,7 @@
         s = "stash";
         st = "status -s";
         sw = "switch";
+        wt = "worktree";
       };
 
       branch.sort = "-committerdate";

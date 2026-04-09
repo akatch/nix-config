@@ -1,7 +1,11 @@
 {
-  programs.direnv = {
-    enable = true;
-    enableZshIntegration = true;
-    nix-direnv.enable = true;
-  };
+  inputs,
+  pkgs,
+  ...
+}: {
+  imports = [
+    inputs.direnv-instant.homeModules.direnv-instant
+  ];
+
+  programs.direnv-instant.enable = true;
 }

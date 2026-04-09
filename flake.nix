@@ -7,6 +7,8 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    direnv-instant.url = "github:Mic92/direnv-instant";
   };
 
   outputs = {

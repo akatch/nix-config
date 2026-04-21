@@ -36,6 +36,7 @@
         st = "status -s";
         sw = "switch";
         wt = "worktree";
+        wta = "!git worktree add -b ab/$1 wt/$1";
       };
 
       branch.sort = "-committerdate";

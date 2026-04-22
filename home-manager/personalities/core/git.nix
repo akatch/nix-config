@@ -36,7 +36,7 @@
         st = "status -s";
         sw = "switch";
         wt = "worktree";
-        wta = "!set -x; git worktree add -b ab/$1 wt/$1; cd $(git rev-parse --show-toplevel)/wt/$1 #";
+        wta = "!git worktree add -b ab/$1 wt/$1 #";
       };
 
       branch.sort = "-committerdate";

@@ -15,9 +15,10 @@
         - Save notes in ~/Documents/Notes
         - Use a timestamp based filename with the pattern YYYYMMDDHHmmss.md
         - Include the prompt in the note
-        - The body of the note should contain the exact text of the response
+        - The body of the note must contain the exact text of the response
         - Use YAML front matter
         - Always include title, date, and appropriate tags in the front matter
+        - Date frontmatter must use the format YYYY-MM-DD HH:mm
         - Always include the 'claude' tag
       '';
 

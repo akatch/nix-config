@@ -36,7 +36,7 @@
       - To find files, use the find command instead of 'ls | grep'
 
       # Agent Configuration
-      - Your configuration lives in ~/code/github.com/CoreWeave-Sandbox/abowles-dotfiles/nix-config/home-manager/claude
+      - Your configuration lives in ~/code/github.com/akatch/nix-config/home-manager/claude
       - Commands are set in commands.nix
       - Everything else is configured in settings.nix, 
 

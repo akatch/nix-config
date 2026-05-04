@@ -28,7 +28,7 @@
       "drs" = "sudo darwin-rebuild switch --flake .#$(hostname)";
       "e" = "vim";
       "g" = "git";
-      "gr" = "grep -rs --exclude-dir=.git";
+      "gr" = "grep -rs --color=always --exclude-dir=.git";
       "hms" = "home-manager switch --flake .#$(whoami)@$(hostname)";
       "l" = "ls -lhG";
       "lah" = "ls -lahG";

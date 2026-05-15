@@ -20,6 +20,7 @@
         - Always include title, date, and appropriate tags in the front matter
         - Date frontmatter must use the format YYYY-MM-DD HH:mm
         - Always include the 'claude' tag
+        - When linking to other notes, use the note title as the link text (eg [My Cool Note](20260430125026.md), not [[20260430125026]])
       '';
 
       commit-msg = ''

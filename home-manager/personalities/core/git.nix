@@ -24,6 +24,7 @@
         b = "branch";
         c = "commit";
         co = "checkout";
+        cp = "cherry-pick";
         d = "diff";
         dc = "diff --cached";
         fp = "push --force-with-lease origin HEAD";
@@ -36,7 +37,7 @@
         st = "status -s";
         sw = "switch";
         wt = "worktree";
-        wta = "!git worktree add -b ab/$1 wt/$1 #";
+        wta = "!f() { root=$(dirname $(git rev-parse --path-format=absolute --git-common-dir)) && branch=ab/\"$1\" && if git show-ref --verify --quiet \"refs/heads/$branch\"; then git worktree add \"$root/wt/$1\" \"$branch\"; else git worktree add -b \"$branch\" \"$root/wt/$1\"; fi; }; f";
       };
 
       branch.sort = "-committerdate";

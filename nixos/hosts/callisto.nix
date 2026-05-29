@@ -11,6 +11,7 @@
     ../modules/vault
   ];
 
+  services.tailscale.enable = true;
   networking = {
     hostName = "callisto";
     firewall = {

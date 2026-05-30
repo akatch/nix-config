@@ -6,6 +6,7 @@
     ../modules/amdgpu
     ../modules/backups
     ../modules/ddclient
+    ../modules/foldingathome
     ../modules/podman
     ../modules/ssh
     ../modules/vault

@@ -18,6 +18,7 @@
       btop
       dig
       fortune
+      gnumake
       jq
       killall
       openssl

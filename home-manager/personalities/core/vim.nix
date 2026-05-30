@@ -43,7 +43,6 @@
         set rtp+=~/.vim/bundle/Vundle.vim
         call vundle#begin()
         Plugin 'akatch/vim-oceans'
-        Plugin 'pasky/claude.vim'
         call vundle#end()
         filetype plugin indent on
         """
@@ -172,9 +171,6 @@
         " Usage:
         ":ZettelTemplate "My Note Title" "$ZETTEL_DIR/special.tpl"
         command! -nargs=+ ZettelTemplate call ZettelNewWithTemplate(<f-args>)
-
-        " claude
-        let g:claude_api_key = $CLAUDE_API_KEY
 
         " latex
         let g:livepreview_previewer = 'zathura'

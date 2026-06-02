@@ -34,6 +34,12 @@
       git_branch = {
         style = "70";
       };
+      custom.repo_name = {
+        command = "basename $(dirname $(git rev-parse --path-format=absolute --git-common-dir)) | sed 's/\\.git$//'";
+        when = "git rev-parse --is-inside-work-tree";
+        format = "[$output]($style) ";
+        style = "bold cyan";
+      };
       cmd_duration = {
         style = "yellow";
       };

@@ -50,13 +50,15 @@
         # Window picker scoped to current session. choose-tree's -f filter is
         # broken in tmux 3.6a (silently ignored except in -s mode), so we
         # build a display-menu from list-windows instead.
-        bind W run-shell "${pkgs.writeShellScript "tmux-window-menu" ''
+        bind w run-shell "${pkgs.writeShellScript "tmux-window-menu" ''
           set -eu
           args=""
-          while IFS='|' read -r idx name path; do
+          while IFS='|' read -r idx name path active; do
             short_path="''${path/#$HOME/\~}"
-            args="$args \"$idx: $name ($short_path)\" \"$idx\" \"select-window -t :$idx\""
-          done < <(tmux list-windows -F '#{window_index}|#{window_name}|#{pane_current_path}')
+            marker=""
+            [ "$active" = "1" ] && marker="*"
+            args="$args \"$idx: $name$marker ($short_path)\" \"$idx\" \"select-window -t :$idx\""
+          done < <(tmux list-windows -F '#{window_index}|#{window_name}|#{pane_current_path}|#{window_active}')
           eval tmux display-menu -T \"'#S windows'\" -x C -y C $args
         ''}"
         bind -T copy-mode-vi v send-keys -X begin-selection

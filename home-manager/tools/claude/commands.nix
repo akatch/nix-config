@@ -168,6 +168,27 @@
         - Wait for all promotions to complete and report success/failure for each
         - Each promotion will show which specific stage was promoted (e.g., loki-us-west-09a-core-observability)
       '';
+
+      pr-review = ''
+        ---
+        description: Address pull request review comments
+        ---
+
+        # PR Review Response
+
+        ## Task
+
+        Address comments on the provided GitHub pull request
+
+        ## Rules
+
+        - Read each comment and list them before changing code
+        - Make ONLY the minimal change requested in each comment
+        - Do NOT make unrelated improvements or add options not requested
+        - Do NOT post replies to GitHub - output suggested replies as text for the user to post
+        - After changes, run all tests, linters, and pre-commit hooks
+        - Show a summary of files changed and ask before committing
+        '';
     };
   };
 }

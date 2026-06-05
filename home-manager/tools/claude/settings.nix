@@ -43,6 +43,8 @@
           "Bash(git worktree list *)"
           "Bash(go *)"
           "Bash(grep *)"
+          "Bash(helm lint *)"
+          "Bash(helm template *)"
           "Bash(head *)"
           "Bash(jq *)"
           "Bash(kubectl get *)"

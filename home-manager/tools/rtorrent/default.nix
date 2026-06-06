@@ -3,6 +3,8 @@
   ...
 }: {
   programs.rtorrent = {
+    # Dagger on irc.libera.net/nixos suggests eg
+    # packages.rtorrent-wrap = pkgs.writeShellScriptBin "rtorrent" ''mkdir -p ...; exec
     enable = true;
     extraConfig =
       ''

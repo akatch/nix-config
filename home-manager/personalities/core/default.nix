@@ -21,6 +21,8 @@
       gnumake
       jq
       killall
+      unixtools.netstat
+      lsof
       openssl
       shellcheck
       silver-searcher

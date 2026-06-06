@@ -22,6 +22,11 @@ in
     kubernetes
   ];
 
+  # TODO as root:
+  # KUBECONFIG=/etc/kubernetes/cluster-admin.kubeconfig kubectl config view --flatten=true > kubeconfig
+  # chmod 600 kubeconfig
+  # chown $USER kubeconfig
+  # mv config /home/$USER/.kube/config
   services.kubernetes = {
     roles = ["master" "node"];
     masterAddress = kubeMasterHostname;
@@ -30,6 +35,7 @@ in
     apiserver = {
       securePort = kubeMasterAPIServerPort;
       advertiseAddress = kubeMasterIP;
+      allowPrivileged = true;
     };
 
     # use coredns

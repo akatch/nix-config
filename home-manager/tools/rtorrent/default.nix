@@ -1,11 +1,20 @@
 {
   config,
+  inputs,
+  pkgs,
   ...
-}: {
+}:
+let
+  pkgs-stable = import inputs.nixpkgs-stable {
+    inherit (pkgs.stdenv.hostPlatform) system;
+  };
+in
+{
   programs.rtorrent = {
     # Dagger on irc.libera.net/nixos suggests eg
     # packages.rtorrent-wrap = pkgs.writeShellScriptBin "rtorrent" ''mkdir -p ...; exec
     enable = true;
+    package = pkgs-stable.rtorrent;
     extraConfig =
       ''
         max_peers = 500

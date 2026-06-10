@@ -32,6 +32,8 @@
         p = "pull";
         poh = "push origin HEAD";
         pdh = "push downstream HEAD";
+        rc = "rebase --continue";
+        rs = "rebase --skip";
         rpo = "remote prune origin";
         s = "stash";
         st = "status -s";

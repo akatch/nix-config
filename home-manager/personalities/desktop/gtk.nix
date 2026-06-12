@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   ...
 }: {
   gtk = {
@@ -13,6 +14,7 @@
       name = "Noto Sans";
       size = 14;
     };
+    gtk4.theme = config.gtk.theme;
     theme = {
       name = "Andromeda";
       package = pkgs.andromeda-gtk-theme;

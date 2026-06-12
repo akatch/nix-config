@@ -39,6 +39,7 @@ in
         schedule = watch_directory_7,5,5,"load.start=${config.home.homeDirectory}/torrents/documentaries/*.torrent,d.directory.set=/mnt/vault/documentaries"
         schedule = watch_directory_8,5,5,"load.start=${config.home.homeDirectory}/torrents/books/*.torrent,d.directory.set=${config.home.homeDirectory}/torrents/books"
         schedule = watch_directory_9,5,5,"load.start=${config.home.homeDirectory}/torrents/openqa-isos/*.torrent,d.directory.set=/var/lib/openqa/share/factory/iso/fixed"
+        schedule = watch_directory_10,5,5,"load.start=${config.home.homeDirectory}/torrents/audiobooks/*.torrent,d.directory.set=${config.home.homeDirectory}/torrents/audiobooks"
 
         #system.method.set_key = event.download.finished,move_complete,"d.set_directory=$d.get_custom1=;execute=mv,-u,$d.get_base_path=,$d.get_custom1="
 

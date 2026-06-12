@@ -1,7 +1,14 @@
 {
   pkgs,
+  inputs,
   ...
-}: {
+}:
+let
+  pkgs-stable = import inputs.nixpkgs-stable {
+    inherit (pkgs.stdenv.hostPlatform) system;
+  };
+in
+{
   imports = [
     ./bash.nix
     ./direnv.nix
@@ -25,7 +32,7 @@
       lsof
       openssl
       shellcheck
-      silver-searcher
+      pkgs-stable.silver-searcher
       unzip
       viddy
       whois

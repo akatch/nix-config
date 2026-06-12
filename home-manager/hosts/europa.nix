@@ -9,6 +9,7 @@
     ../personalities/core
     ../personalities/desktop
     ../personalities/k8s
+    ../tools/calibre
     ../tools/rtorrent
     ../tools/syncthing
     ../tools/tex
@@ -18,7 +19,6 @@
     username = "al";
     packages = with pkgs; [
       brightnessctl
-      calibre
       weechat
     ];
   };

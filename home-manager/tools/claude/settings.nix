@@ -52,7 +52,7 @@
           "Bash(make build)"
           "Bash(make test)"
           "Bash(mkdir *)"
-          "Bash(nix develop)"
+          "Bash(nix develop *)"
           "Bash(nix eval *)"
           "Bash(nix flake show *)"
           "Bash(nix why-depends *)"

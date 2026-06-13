@@ -54,10 +54,22 @@
           set -eu
           args=""
           while IFS='|' read -r idx name path active; do
-            short_path="''${path/#$HOME/\~}"
-            marker=""
+            short_path="''${path%/}"
+            seg3="''${short_path##*/}"
+            rest="''${short_path%/*}"
+            seg2="''${rest##*/}"
+            rest="''${rest%/*}"
+            seg1="''${rest##*/}"
+            if [ -n "$seg1" ] && [ "$seg1" != "$seg2" ] && [ "$seg1" != "$short_path" ]; then
+              short_path="$seg1/$seg2/$seg3"
+            elif [ -n "$seg2" ] && [ "$seg2" != "$seg3" ]; then
+              short_path="$seg2/$seg3"
+            else
+              short_path="$seg3"
+            fi
+            marker=" "
             [ "$active" = "1" ] && marker="*"
-            args="$args \"$idx: $name$marker ($short_path)\" \"$idx\" \"select-window -t :$idx\""
+            args="$args \"$marker $idx: $name ($short_path)\" \"$idx\" \"select-window -t :$idx\""
           done < <(tmux list-windows -F '#{window_index}|#{window_name}|#{pane_current_path}|#{window_active}')
           eval tmux display-menu -T \"'#S windows'\" -x C -y C $args
         ''}"

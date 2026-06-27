@@ -112,7 +112,6 @@
           repeat_rate = "30";
         };
         "type:touchpad" = {
-          # TODO 3-finger swipe to change workspace
           tap = "enabled";
         };
       };
@@ -124,7 +123,7 @@
       {
         "${mod}+Shift+w" = "exec 'firefox'";
         "${mod}+n" = "exec 'dunstctl close-all'";
-        "${mod}+m" = "exec alacritty msg create-window -e pulsemixer";
+        "${mod}+m" = "exec alacritty msg create-window --class pulsemixer -e pulsemixer";
         "Ctrl+space" = "workspace 1";
         "Alt+space" = "workspace 2";
         "Ctrl+Shift+l" = "exec swaylock";
@@ -156,6 +155,26 @@
         { command = "swayidle -w timeout 1800 'swaylock -f -c 000000' timeout 3600 'swaymsg \"output * dpms off\"' resume 'swaymsg \"output * dpms on\"' before-sleep 'swaylock -f -c 000000'"; }
       ];
       terminal = "alacritty";
+      window.commands = [
+        {
+          command = "floating enable";
+          criteria = {
+            app_id = "pulsemixer";
+          };
+        }
+        {
+          command = "floating enable";
+          criteria = {
+            app_id = "signal";
+          };
+        }
+        {
+          command = "move workspace 4";
+          criteria = {
+            app_id = "calibre-gui";
+          };
+        }
+      ];
     };
   };
 }

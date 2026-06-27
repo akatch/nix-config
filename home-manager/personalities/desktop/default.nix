@@ -15,7 +15,7 @@
   home = {
     packages = with pkgs; [
       keepassxc
-      prusa-slicer
+      orca-slicer
       pulsemixer
       signal-desktop
     ];

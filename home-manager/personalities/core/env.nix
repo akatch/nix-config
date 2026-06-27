@@ -10,7 +10,6 @@
     sessionVariables = {
       GREP_COLORS = "mt=38;5;214:sl=:cx=:fn=38;5;236:ln=32:bn=32:se = '38;5;233'";
       GREP_COLOR = "38;5;214";
-      EDITOR = lib.mkDefault "vim";
       JQ_COLORS = "1;30:0;37:0;37:0;37:0;32:1;37:1;37";
       LANG = "en_US.UTF-8";
       LESS = "-j.5 -R -F -X";
@@ -20,7 +19,6 @@
       NIX_CONFIG = "experimental-features = nix-command flakes";
       QT_SCALE_FACTOR = "1.5";
       QUOTING_STYLE = "literal";
-      VISUAL = lib.mkDefault "$EDITOR";
       ZETTEL_DIR = "$HOME/sync/zettelkasten";
     };
 

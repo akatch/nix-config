@@ -48,6 +48,7 @@
         """
 
         colorscheme oceans
+        set autowriteall
         set nohlsearch cursorline
         set wildmode=longest,list,full
         set wildmenu

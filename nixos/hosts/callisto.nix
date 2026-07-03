@@ -5,6 +5,7 @@
   imports = [
     ../modules/amdgpu
     ../modules/backups
+    ../modules/chatbot
     ../modules/ddclient
     ../modules/foldingathome
     ../modules/podman

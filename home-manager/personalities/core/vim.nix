@@ -24,6 +24,7 @@
       fzf-wrapper
       vim-gitgutter
       nerdtree
+      vim-lsp-ale
       vim-polyglot
       statix
       todo-txt-vim
@@ -75,14 +76,8 @@
 
         nmap <silent> <leader>n :set number!<CR>
         nmap <silent> <leader>p :set paste!<CR>
-        nmap <silent> <leader>j :ALENextWrap<CR>
-        nmap <silent> <leader>k :ALEPreviousWrap<CR>
         nmap <silent> <leader>t :NERDTreeToggle<CR>
         nmap <leader>d a<C-R>=strftime("%F %T")<CR><Esc>
-        nmap <leader>z :ZettelNew<space>
-        nmap <silent> <leader>zo :ZettelOpen<CR>
-        nmap <silent> <leader>o :VimwikiFollowLink<CR>
-        nmap <silent> <leader>cf :let @+=expand('%:p')<CR>
 
         " pane separators like tmux
         set fillchars+=vert:\│
@@ -102,6 +97,9 @@
         let g:ctrlp_switch_buffer = 'Et'
 
         " ale
+        nmap <silent> <leader>j :ALENextWrap<CR>
+        nmap <silent> <leader>k :ALEPreviousWrap<CR>
+
         let g:ale_fix_on_save = 1
         let g:ale_echo_msg_error_str = 'E'
         let g:ale_echo_msg_warning_str = 'W'
@@ -148,6 +146,11 @@
         let g:gitgutter_async = 1
 
         " zk
+        nmap <leader>z :ZettelNew<space>
+        nmap <silent> <leader>zo :ZettelOpen<CR>
+        nmap <silent> <leader>o :VimwikiFollowLink<CR>
+        nmap <silent> <leader>cf :let @+=expand('%:p')<CR>
+
         let g:vimwiki_list = [{'path': $ZETTEL_DIR,'ext':'.md', 'syntax':'markdown'}]
         let g:zettel_format = "%Y%m%d%H%M%S"
 

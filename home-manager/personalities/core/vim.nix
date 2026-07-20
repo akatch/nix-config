@@ -24,7 +24,9 @@
       fzf-wrapper
       vim-gitgutter
       nerdtree
+      vim-lsp
       vim-lsp-ale
+      vim-lsp-settings
       vim-polyglot
       statix
       todo-txt-vim
@@ -78,6 +80,8 @@
         nmap <silent> <leader>p :set paste!<CR>
         nmap <silent> <leader>t :NERDTreeToggle<CR>
         nmap <leader>d a<C-R>=strftime("%F %T")<CR><Esc>
+        """ h/t https://stackoverflow.com/a/954336
+        nmap <leader>f :let @* = expand("%:p")
 
         " pane separators like tmux
         set fillchars+=vert:\│
@@ -146,7 +150,7 @@
         let g:gitgutter_async = 1
 
         " zk
-        nmap <leader>z :ZettelNew<space>
+        nmap <leader>z :ZettelNew<CR>
         nmap <silent> <leader>zo :ZettelOpen<CR>
         nmap <silent> <leader>o :VimwikiFollowLink<CR>
         nmap <silent> <leader>cf :let @+=expand('%:p')<CR>

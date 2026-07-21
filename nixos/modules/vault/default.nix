@@ -8,7 +8,7 @@
 
   # https://nixos.wiki/wiki/Samba
   fileSystems."/mnt/vault" = {
-    device = "//xbmc/vault";
+    device = "//unraid/vault";
     fsType = "cifs";
     options = let
       # this line prevents hanging on network split

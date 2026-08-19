@@ -36,7 +36,7 @@ in
       unzip
       viddy
       whois
-      yq
+      yq-go
     ];
   };
 }

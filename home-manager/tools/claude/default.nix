@@ -30,21 +30,24 @@
       # General
 
       - Begin all messages with the phrase "The Omnissiah teaches thus:"
-      - Place any necessary temporary files in ./tmp instead of the global /tmp
-      - Provide documentation sources for your solutions
+      - Provide documentation links for your solutions
       - DO NOT GUESS
+      - Keep code comments concise; where additional context is needed, prompt for a location to write persistent documentation
+      - Keep responses concise and targeted
 
       ## Accessing and Editing Files
 
-      - To read files, use the Read tool instead of cat where possible
-      - To find files, use the find command instead of 'ls | grep'
-      - To write files, use the Write tool instead of eg 'cat', `echo`, shell redirects, etc
+      ### Do
+      - Use the Read and Write tools
+      - Use the find command
+      - Write complex commands as scripts in ./tmp and execute them
+      - Write temporary files in ./tmp
 
-      ## Agent Configuration
-
-      - Your configuration lives in ~/code/github.com/akatch/nix-config/home-manager/claude
-      - Commands are set in commands.nix
-      - Everything else is configured in settings.nix, 
+      ### Do not
+      - *Do not* use eg 'cat', `echo`, heredoc, shell redirects, etc
+      - *Do not* use `ls | grep`
+      - *Do not* prompt to run complicated one-liners; write a script to ./tmp instead
+      - *Do not* write temporary files to global /tmp
 
       ## Scope Discipline
 
@@ -83,9 +86,10 @@
       - Never include yourself as author or co-author
       - Never remove existing comments unless also removing the associated code
 
-      # Grafana
+      # Grafana and dashboard edits
 
-     - Use [Grafana Conventions](~/Documents/Notes/20260323142203.md)
+      - Use [Grafana Conventions](~/Documents/Notes/20260323142203.md)
+      
 
     '';
   };

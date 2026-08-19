@@ -189,6 +189,72 @@
         - After changes, run all tests, linters, and pre-commit hooks
         - Show a summary of files changed and ask before committing
         '';
+
+      new-worktree = ''
+        ---
+        description: Create a git worktree + ab/ branch for a task, following the wt/ convention
+        ---
+
+        # New Worktree For Task
+
+        Create a new worktree and branch for a task named: **$1**
+
+        ## Rules
+
+        - Derive names from the task name `$1`:
+          - Worktree dir: `wt/$1` (relative to the repo root; NO `ab/` prefix)
+          - Branch: `ab/$1` (WITH the `ab/` prefix)
+        - Determine the repo root with `git rev-parse --show-toplevel` and build an
+          absolute worktree path. Never `cd`; use `git -C <repo-root>` for all git calls.
+        - Base the branch on the up-to-date default branch:
+          - `git -C <repo-root> fetch origin`
+          - `git -C <repo-root> worktree add <repo-root>/wt/$1 -b ab/$1 origin/main`
+            (use the actual default branch if it is not `main`)
+        - After creation, confirm with `git -C <repo-root> worktree list` and report the
+          absolute worktree path so it can be used with `/in-worktree`.
+        - Do NOT edit any files or start work; only create the worktree.
+      '';
+
+      in-worktree = ''
+        ---
+        description: Run a command scoped to a worktree path without cd prompts
+        ---
+
+        # Run In Worktree
+
+        Run a command inside a worktree without changing the shell's working directory.
+
+        **Worktree:** `$1`
+        **Command:** `$2`
+
+        ## Rules
+
+        - Resolve `$1` to an absolute path. If it is a bare name, treat it as
+          `<repo-root>/wt/$1`.
+        - Never use a bare `cd`.
+          - For git operations, use `git -C "<abs-worktree>" ...`.
+          - For build/test, prefer the repo's already-allowlisted Makefile targets
+            (e.g. `make -C "<abs-worktree>" build`, `make -C "<abs-worktree>" test`)
+            over a `cd && go ...` subshell, so no permission prompt is triggered.
+        - Report the command's output and exit status. Do not modify files unless `$2`
+          itself does so.
+      '';
+
+      update-configuration = ''
+        ---
+        description: Update the agent configuration settings
+        ---
+
+        # Update Agent Configuration
+
+        Make changes to Claude's permissions, skills, or other global configuration parameters.
+
+        ## Rules
+
+        - Your configuration lives in ~/code/github.com/akatch/nix-config/home-manager/claude
+        - Commands are set in commands.nix
+        - Everything else is configured in settings.nix, 
+      '';
     };
   };
 }

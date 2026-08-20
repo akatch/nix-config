@@ -2,6 +2,7 @@
   programs.claude-code = {
     settings = {
       alwaysThinkingEnabled = false;
+      outputStyle = "Concise";
       permissions = {
         allow = [
           "Bash(*--help*)"

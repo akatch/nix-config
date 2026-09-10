@@ -46,94 +46,6 @@
         - Avoid using emojis and check marks etc in messages
       '';
 
-      recall-setup = ''
-        ---
-        description: Load project setup context from CLAUDE.md with worktree+beads pattern guide
-        ---
-
-        # Project Setup Recall
-
-        Load the project-specific setup from CLAUDE.md file and the general worktree+beads workflow pattern.
-
-        **Project:** $1
-
-        ---
-
-        ## General Workflow Pattern: Git Worktrees + Beads
-
-        This is the standardized pattern you follow for organizing projects:
-
-        ### Directory Structure Pattern
-
-        ```
-        ~/code/github.com/organization/projectname/ # Main repository (NEVER EDIT)
-          ├── .git/                                 # Git metadata
-          ├── .gitignore                            # Must contain "wt/" entry
-          ├── [project files...]                    # Always on main branch
-          └── wt/                                   # GITIGNORED worktree container
-              ├── .beads/                           # Shared beads database (all worktrees)
-              ├── CLAUDE.md                         # Project-specific setup info
-              ├── feature-branch-1/                 # Worktree for feature-branch-1
-              ├── feature-branch-2/                 # Worktree for feature-branch-2
-              └── dev/                              # General development worktree
-        ```
-
-        ### Core Principles
-
-        1. **Main Repository is Read-Only** - Always tracks `main` branch, never edit directly
-        2. **All Work Happens in Worktrees** - Each worktree under `wt/` has its own branch
-        3. **Shared Beads Database** - Lives at `~/code/github.com/organization/projectname/wt/.beads/`, shared across all worktrees
-        4. **Worktrees are Gitignored** - The `wt/` directory must be in `.gitignore`
-
-        ### Key Commands
-
-        **Worktree Management:**
-        ```bash
-        git worktree list                    # List all worktrees
-        git worktree add wt/name -b branch   # Create new worktree + branch
-        git worktree remove wt/name          # Remove worktree
-        ```
-
-        **Beads Management (always set context first!):**
-        ```bash
-        mcp__plugin_beads_beads__set_context("/path/to/project/wt")
-        bd list                              # List all issues
-        bd show issue-id                     # Show issue details
-        bd ready                             # Show ready-to-work issues
-        ```
-
-        ### Important Rules
-
-        **DO:**
-        - ✅ Always create worktrees under `wt/` directory
-        - ✅ Always set beads context to `projectroot/wt` before beads operations
-        - ✅ Keep main repository on main branch, never edit
-        - ✅ Use worktrees for ALL development work
-
-        **DON'T:**
-        - ❌ Never edit files in main repository
-        - ❌ Never initialize beads at project root (only in `wt/`)
-        - ❌ Never commit `wt/` directory to git
-        - ❌ Never forget to set beads context before beads operations
-
-        ---
-
-        ## Project-Specific Setup
-
-        Now load the project-specific CLAUDE.md file:
-
-        Read the file at `~/code/github.com/organization/$1/wt/CLAUDE.md` to get:
-        - Beads root location
-        - Current worktree structure
-        - Branch stacking order
-        - Recent work completed
-        - Next tasks
-        - Active issues
-        - Important commands specific to this project
-
-        After reading CLAUDE.md, set the beads context and verify the working directory.
-      '';
-
       sync-loki-freight = ''
         ---
         description: Sync latest Kargo freight to loki observability stages
@@ -240,7 +152,7 @@
           itself does so.
       '';
 
-      update-configuration = ''
+      update-nix-config = ''
         ---
         description: Update the agent configuration settings
         ---
@@ -251,9 +163,95 @@
 
         ## Rules
 
-        - Your configuration lives in ~/code/github.com/akatch/nix-config/home-manager/claude
-        - Commands are set in commands.nix
-        - Everything else is configured in settings.nix, 
+        - Your configuration lives in ~/code/github.com/akatch/nix-config/home-manager/tools/claude
+        - `commands.nix` — slash commands and skills, each a nix `'''` string keyed by command name
+        - `settings.nix` — `programs.claude-code.settings`: permissions allow/deny, output style, hooks
+        - `mcp-servers.nix` — `programs.claude-code.mcpServers` entries
+        - `default.nix` — imports the above, plus `home.packages` and session variables
+        - Skill bodies are nix `'''` strings: a literal `'''` or `''${` inside one breaks the build.
+          Escape a literal two-quote sequence as three quotes, and a literal dollar-brace as
+          `''${`. Always check with `nix-instantiate --parse <file>` after editing.
+        - Never edit ~/.claude directly — it is generated from this repo and changes there are lost
+          on the next rebuild.
+        - After editing, report that a rebuild (`home-manager switch`) is needed to apply it. Do not
+          run the rebuild or commit unless asked.
+      '';
+
+      rootcause-pd = ''
+        ---
+        description: Root cause a PagerDuty incident from telemetry and put a concise summary on the clipboard
+        ---
+
+        # Root Cause PagerDuty Incident
+
+        Root cause PagerDuty incident **$1** using observability data, then draft a summary for the incident and copy it to the clipboard.
+
+        ## Task
+
+        1. Pull the incident with the PagerDuty MCP server (`get_incident`, then `list_alerts_from_incident`).
+           - `list_alerts_from_incident` needs the *incident ID* (eg Q063SMA4HKXRJM), not the incident number. Get it from `get_incident` first.
+           - Read the alert's labels and annotations: they carry namespace, pod, cluster, region, the dashboard URL, the runbook URL, and the alert expression in `generator_url`.
+        2. Check `get_past_incidents` to see whether this recurs and on what cadence. A daily or hourly repeat means the alert is firing on the tail of a permanent condition, not a new event.
+        3. Identify the datasource from the alert's `generator_url` / dashboard URL, then confirm with `list_datasources`. Match the region (VictoriaMetrics US-EAST, US-WEST, EU-SOUTH; Loki US-EAST etc).
+        4. Establish the failure mode before theorizing. For a restart or crashloop, go straight to `kube_pod_container_status_last_terminated_reason` for the real kill reason.
+           - `last_terminated_reason` is a sticky gauge: it persists long after the event and says nothing about *when*. Before blaming it, confirm the pod name matches the workload you're chasing and that `kube_pod_container_status_restarts_total` actually moved in your window. A flat restart count means the process never died and the reason is stale.
+           - Not every stall is a kill. If the process is alive and serving traffic while work stops, look for a component that failed *inside* it — a Kafka Connect task, a worker thread, a consumer — rather than a container-level cause.
+        5. Prove the mechanism with a metric that ties the symptom to a specific limit or threshold, and quote the actual numbers.
+        6. Explicitly rule out the plausible alternatives, and say in the writeup which ones you eliminated and how.
+        7. Pull logs from the matching Loki datasource around the event window. Note that sparse logs are themselves a signal: a cleanly exiting process logs shutdown messages, an OOM kill does not.
+        8. Check whether the problem is specific to this workload or fleet-wide, by comparing the same metric across peers. This decides whether the fix is one config change or a systemic ticket.
+        9. Present the root cause with the evidence chain, then draft the summary and copy it to the clipboard.
+
+        ## Diagnostic rules
+
+        - Query the observability knowledge base before running metric queries, per the o11yops server instructions.
+        - Start with a narrow time range and widen only as needed. Prefer instant queries when a single point answers the question.
+        - Always aggregate with `max()` / `sum()` / `topk()`. Raw selectors across a churning workload return thousands of series and blow the token limit.
+        - Beware summing a gauge across pod generations: `sum(vm_promscrape_active_scrapers)` over 190 dead pods reports a nonsense total. Use `max by (pod)` or scope to the live pod.
+        - Distinguish steady state from transient peaks. A healthy baseline with a short spike into a limit still kills the process, and a 60s scrape interval will usually miss the true peak.
+        - Correlate `go_memstats_heap_inuse_bytes` with `container_memory_working_set_bytes` against `kube_pod_container_resource_limits` for memory faults.
+        - Goroutine count discriminates causes: hundreds means a leak or thundering herd, one or two means a single large allocation.
+        - A sidecar dying alongside the main container points at a cgroup-level kill, not an application fault.
+        - Count affected pods with `count(count by (pod) (...))` to reveal churn the alert text understates.
+        - Parent-level health often lies about children. Kafka Connect reports `kafka_connect_connector_status` RUNNING while every task in `kafka_connect_connector_task_status` is `failed`. Check the child/task metric, not just the parent.
+        - For consumer lag, separate "slow" from "stopped": chart the committed offset itself. A frozen offset with lag rising at the produce rate is a hard stall, not backpressure. A commit-sequence counter resetting to 1 means tasks were torn down and re-failed.
+        - A flat low value is not proof of health if the input is also idle. Confirm a topic or endpoint is actually busy before reading its zero as good news.
+        - Sparse or single-purpose logs are evidence. If every line in the failure window is a health probe, the failure path never logged to stdout — say so and note where the detail does live (eg a REST status endpoint, whose response size hints at how much is hidden there).
+
+        ## Summary rules
+
+        - Lead with the root cause in the first clause of the first sentence.
+        - Keep sentences short — one claim each. Never chain clauses with semicolons or a trailing
+          "and the durable fix is..." just to satisfy a length target. Readability beats compression.
+        - Structure as short paragraphs, one idea per paragraph, blank line between: root cause;
+          the evidence that proves it; what was ruled out and how; blast radius and why it went
+          unnoticed; anything unproven; the fixes. Omit a paragraph that has nothing to say.
+        - Aim for under ~250 words. If the evidence genuinely needs more, spend the words rather
+          than compressing into run-on sentences — but cut redundant detail first.
+        - Cite specific measured values, not adjectives. Name the metric that proves it.
+        - State what was ruled out, and the observation that eliminated it.
+        - Say whether it is isolated or systemic, and give the immediate fix plus the durable fix.
+        - Call out any detection gap: if the symptom that paged is downstream of the real failure,
+          say what should have alerted instead.
+        - Separate proven from inferred. If the triggering error was never captured, say so and
+          name where it still lives.
+        - No emojis, no check marks, no preamble, no sign-off. Plain prose that reads as an engineer's incident note.
+        - Do not mention Claude, AI, or that the analysis was generated.
+
+        ## Clipboard
+
+        - Write the summary to the session scratchpad directory, then `pbcopy < <file>`.
+        - Do not use echo, heredocs, or shell redirects to author the text; use the Write tool.
+        - Verify with `pbpaste | wc -c` and report the byte count so UTF-8 punctuation is confirmed intact.
+
+        ## Rules
+
+        - Keep responses CONCISE and SCOPED
+        - **Never post to PagerDuty.** Do not call `add_note_to_incident`, `manage_incidents`, or any other write tool. Draft only, copy to clipboard, and let me paste it.
+        - Read-only PagerDuty and observability queries are fine without asking.
+        - Do not change any code or config as part of root causing. Recommend the fix and name the file, but wait for confirmation before editing.
+        - If evidence is inconclusive, say so plainly rather than presenting a confident guess. Distinguish what is proven from what is inferred.
+        - Include the incident URL and relevant doc links with the final writeup.
       '';
     };
   };

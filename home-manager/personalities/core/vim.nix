@@ -99,6 +99,12 @@
         " ctrlp
         let g:ctrlp_map = '<s-f>'
         let g:ctrlp_switch_buffer = 'Et'
+        let g:ctrlp_show_hidden = 1
+        " show_hidden pulls in VCS internals; exclude them explicitly
+        let g:ctrlp_custom_ignore = {
+        \   'dir': '\v[\/](\.git|\.hg|\.svn|\.direnv|node_modules|result)$',
+        \   'file': '\v\.(exe|so|dll|swp)$',
+        \}
 
         " ale
         nmap <silent> <leader>j :ALENextWrap<CR>

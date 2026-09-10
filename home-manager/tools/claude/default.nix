@@ -6,8 +6,10 @@
 
   imports = [
     ./commands.nix
-    #./mcp-servers.nix
+    ./mcp-servers.nix
+    ./permissions.nix
     ./settings.nix
+    ./skills.nix
   ];
 
   home = {

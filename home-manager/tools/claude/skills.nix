@@ -1,0 +1,7 @@
+
+{
+  programs.claude-code = {
+    skills = {
+    };
+  };
+}

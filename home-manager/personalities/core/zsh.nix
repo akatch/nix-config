@@ -11,6 +11,17 @@
       ignoreAllDups = true;
       ignoreSpace = true;
       share = true;
+
+      # Whole-line zsh glob patterns, not regex
+      ignorePatterns = [
+        "g c"
+        "g d"
+        "g b"
+        "g st"
+        "g co *"
+        "z"
+        "zo"
+      ];
     };
 
     completionInit =
@@ -25,6 +36,14 @@
     initContent =
       ''
       setopt INC_APPEND_HISTORY
+
+      # HISTORY_IGNORE only filters the history file; this filters the
+      # in-memory list too, so CTRL-R can't surface it mid-session.
+      zshaddhistory() {
+        emulate -L zsh
+        setopt extended_glob
+        [[ ''${1%%$'\n'} != ''${~HISTORY_IGNORE} ]]
+      }
 
       export LESS_TERMCAP_mb=$'\e[38;5;24m'
       export LESS_TERMCAP_md=$'\e[01;38;5;28m'

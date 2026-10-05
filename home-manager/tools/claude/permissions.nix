@@ -243,6 +243,10 @@
           "Bash(git add *)"
           "Bash(git commit *)"
           "Bash(git push *)"
+          "Bash(kubectl annotate *)"
+          "Bash(kubectl delete *)"
+          "Bash(kubectl edit *)"
+          "Bash(kubectl exec *)"
         ];
         deny = [
           "Read(.aws/credentials)"

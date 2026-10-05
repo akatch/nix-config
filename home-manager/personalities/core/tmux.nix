@@ -44,7 +44,16 @@
         bind -r l select-pane -R
         bind e command-prompt -p "vim -p" "split-window vim -p %%"
         bind m command-prompt -p "man" "split-window man %%"
-        bind , command-prompt -p "session" "switch-client -t %%"
+        bind , run-shell "${pkgs.writeShellScript "tmux-session-menu" ''
+          set -eu
+          args=""
+          while IFS='|' read -r name windows attached; do
+            marker=" "
+            [ "$attached" != "0" ] && marker="*"
+            args="$args \"$marker $name ($windows windows)\" \"\" \"switch-client -t '$name'\""
+          done < <(tmux list-sessions -F '#{session_name}|#{session_windows}|#{session_attached}')
+          eval tmux display-menu -T \"'sessions'\" -x C -y C $args
+        ''}"
         bind t command-prompt -p "todo.txt" "run-shell -b 'todo %%'"
         bind X confirm-before -p "kill window #I?" "kill-window"
         # Window picker scoped to current session. choose-tree's -f filter is

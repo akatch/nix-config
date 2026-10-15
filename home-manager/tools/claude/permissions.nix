@@ -239,6 +239,7 @@
           "mcp__stargate-pagerduty__browse_users"
           "Read"
           "Read(./tmp/**)"
+          "ToolSearch"
           "WebFetch"
           "WebSearch"
         ];

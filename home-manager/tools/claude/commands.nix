@@ -104,7 +104,7 @@
 
       new-worktree = ''
         ---
-        description: Create a git worktree + ab/ branch for a task, following the wt/ convention
+        description: Create a git worktree + ab/ branch for a task, following the worktrees/ convention
         ---
 
         # New Worktree For Task
@@ -114,13 +114,13 @@
         ## Rules
 
         - Derive names from the task name `$1`:
-          - Worktree dir: `wt/$1` (relative to the repo root; NO `ab/` prefix)
+          - Worktree dir: `worktrees/$1` (relative to the repo root; NO `ab/` prefix)
           - Branch: `ab/$1` (WITH the `ab/` prefix)
         - Determine the repo root with `git rev-parse --show-toplevel` and build an
           absolute worktree path. Never `cd`; use `git -C <repo-root>` for all git calls.
         - Base the branch on the up-to-date default branch:
           - `git -C <repo-root> fetch origin`
-          - `git -C <repo-root> worktree add <repo-root>/wt/$1 -b ab/$1 origin/main`
+          - `git -C <repo-root> worktree add <repo-root>/worktrees/$1 -b ab/$1 origin/main`
             (use the actual default branch if it is not `main`)
         - After creation, confirm with `git -C <repo-root> worktree list` and report the
           absolute worktree path so it can be used with `/in-worktree`.
@@ -142,7 +142,7 @@
         ## Rules
 
         - Resolve `$1` to an absolute path. If it is a bare name, treat it as
-          `<repo-root>/wt/$1`.
+          `<repo-root>/worktrees/$1`.
         - Never use a bare `cd`.
           - For git operations, use `git -C "<abs-worktree>" ...`.
           - For build/test, prefer the repo's already-allowlisted Makefile targets

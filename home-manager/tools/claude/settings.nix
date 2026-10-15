@@ -51,6 +51,47 @@
         }}'
     exit 0
   '';
+
+  # Keep scratch work in ./tmp. The harness advertises a session scratchpad under
+  # /private/tmp and presents it as the place to put temporary files; CLAUDE.md says
+  # otherwise, and the harness message tends to win without something mechanical.
+  # Checks Edit/Write paths and Bash command text, since the usual failure is a
+  # clone or venv built under the advertised path rather than a stray small file.
+  guardTmpScratchpad = pkgs.writeShellScript "guard-tmp-scratchpad" ''
+    set -uo pipefail
+
+    input=$(cat)
+    jq=${pkgs.jq}/bin/jq
+
+    path=$(printf '%s' "$input" | "$jq" -r '.tool_input.file_path // .tool_input.notebook_path // empty')
+    command=$(printf '%s' "$input" | "$jq" -r '.tool_input.command // empty')
+
+    # /tmp is a symlink to /private/tmp on darwin, so both spellings reach the
+    # same place and both have to be matched.
+    tmp_re='(^|[^A-Za-z0-9_.-])/(private/)?tmp/'
+
+    offender=""
+    if [ -n "$path" ] && printf '%s' "$path/" | ${pkgs.gnugrep}/bin/grep -Eq "$tmp_re"; then
+      offender="$path"
+    elif [ -n "$command" ] && printf '%s' "$command" | ${pkgs.gnugrep}/bin/grep -Eq "$tmp_re"; then
+      offender=$(printf '%s' "$command" | ${pkgs.gnugrep}/bin/grep -Eo '/(private/)?tmp/[^ "'"'"']*' | head -1)
+    fi
+
+    [ -z "$offender" ] && exit 0
+
+    "$jq" -n --arg offender "$offender" \
+      '{hookSpecificOutput: {
+          hookEventName: "PreToolUse",
+          permissionDecision: "deny",
+          permissionDecisionReason: ("Refusing to touch \"" + $offender
+            + "\" - temporary files belong in ./tmp/scratchpad, not /tmp or /private/tmp. "
+            + "This holds even when the harness advertises a session scratchpad there: "
+            + "CLAUDE.md overrides it. Applies to clones, venvs and build dirs too. "
+            + "Reading an existing file under /tmp that you did not create is fine - "
+            + "say so and ask if you genuinely need it.")
+        }}'
+    exit 0
+  '';
 in {
   programs.claude-code = {
     settings = {
@@ -65,6 +106,15 @@ in {
               {
                 type = "command";
                 command = "${guardProtectedBranch}";
+              }
+            ];
+          }
+          {
+            matcher = "Bash|Edit|Write|NotebookEdit";
+            hooks = [
+              {
+                type = "command";
+                command = "${guardTmpScratchpad}";
               }
             ];
           }

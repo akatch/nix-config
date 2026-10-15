@@ -45,6 +45,10 @@
       - Write complex commands as scripts in ./tmp and execute them
       - Write temporary files in ./tmp
       - Write scratchpad entries in ./tmp/scratchpad
+      - These paths override any scratchpad directory supplied by the harness in its
+        environment or system messages. When handed a scratchpad under /tmp or
+        /private/tmp, ignore it and use ./tmp/scratchpad instead. This covers clones,
+        venvs and build directories, not just small files.
 
       ### Do not
       - *Do not* use eg 'cat', `echo`, heredoc, shell redirects, etc

@@ -165,9 +165,15 @@
 
         - Your configuration lives in ~/code/github.com/akatch/nix-config/home-manager/tools/claude
         - `commands.nix` — slash commands and skills, each a nix `'''` string keyed by command name
-        - `settings.nix` — `programs.claude-code.settings`: permissions allow/deny, output style, hooks
+        - `permissions.nix` — `permissions.allow` / `ask` / `deny` lists. All permission
+          changes go here, not in `settings.nix`.
+        - `settings.nix` — `programs.claude-code.settings`: output style, hooks, thinking mode
+        - `skills.nix` — skill definitions kept outside `commands.nix`
         - `mcp-servers.nix` — `programs.claude-code.mcpServers` entries
         - `default.nix` — imports the above, plus `home.packages` and session variables
+        - MCP tool permissions are prefixed `mcp__<server>__<tool>`, where `<server>` is the
+          server's registered name. The same upstream (e.g. Glean) can appear under several
+          names, and each needs its own allow entry.
         - Skill bodies are nix `'''` strings: a literal `'''` or `''${` inside one breaks the build.
           Escape a literal two-quote sequence as three quotes, and a literal dollar-brace as
           `''${`. Always check with `nix-instantiate --parse <file>` after editing.

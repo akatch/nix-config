@@ -44,12 +44,14 @@
       - Use the find command
       - Write complex commands as scripts in ./tmp and execute them
       - Write temporary files in ./tmp
+      - Write scratchpad entries in ./tmp/scratchpad
 
       ### Do not
       - *Do not* use eg 'cat', `echo`, heredoc, shell redirects, etc
       - *Do not* use `ls | grep`
+      - *Do not* issue warnings about conflicts between system instructions and my directives to use Read/Write tools
       - *Do not* prompt to run complicated one-liners; write a script to ./tmp instead
-      - *Do not* write temporary files to global /tmp
+      - *Do not* write temporary files to global /tmp or /private
 
       ## Scope Discipline
 

@@ -39,7 +39,7 @@
         st = "status -s";
         sw = "switch";
         wt = "worktree";
-        wta = "!f() { root=$(dirname $(git rev-parse --path-format=absolute --git-common-dir)) && branch=ab/\"$1\" && if git show-ref --verify --quiet \"refs/heads/$branch\"; then git worktree add \"$root/wt/$1\" \"$branch\"; else git worktree add -b \"$branch\" \"$root/wt/$1\"; fi; }; f";
+        wta = "!f() { root=$(dirname $(git rev-parse --path-format=absolute --git-common-dir)) && branch=ab/\"$1\" && if git show-ref --verify --quiet \"refs/heads/$branch\"; then git worktree add \"$root/worktrees/$1\" \"$branch\"; else git worktree add -b \"$branch\" \"$root/worktrees/$1\"; fi; }; f";
         wtl = "worktree list";
         wtr = "worktree remove";
       };

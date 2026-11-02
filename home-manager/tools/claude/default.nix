@@ -15,6 +15,7 @@
   home = {
     packages = with pkgs; [
       herdr
+      pre-commit
       uv
     ];
 

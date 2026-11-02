@@ -97,6 +97,7 @@ in {
     settings = {
       alwaysThinkingEnabled = false;
       outputStyle = "Concise";
+      includeCoAuthoredBy = false;
 
       hooks = {
         PreToolUse = [

@@ -1,6 +1,6 @@
 {
   programs.atuin = {
-    enable = true;
+    enable = false;
     enableZshIntegration = false;
     flags = [ "--disable-ctrl-r" ];
     # https://docs.atuin.sh/configuration/config/

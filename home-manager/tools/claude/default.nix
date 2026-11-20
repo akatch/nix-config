@@ -94,12 +94,6 @@
       - Never work in the main branch
       - Never include yourself as author or co-author
       - Never remove existing comments unless also removing the associated code
-
-      # Grafana and dashboard edits
-
-      - Use [Grafana Conventions](~/Documents/Notes/20260323142203.md)
-      
-
     '';
   };
 }

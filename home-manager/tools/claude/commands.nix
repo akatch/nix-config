@@ -46,41 +46,6 @@
         - Avoid using emojis and check marks etc in messages
       '';
 
-      sync-loki-freight = ''
-        ---
-        description: Sync latest Kargo freight to loki observability stages
-        ---
-
-        # Sync Loki Freight
-
-        Synchronize the latest freight from the observability project to loki, loki-eu-south, and loki-us-east-usw stages.
-
-        ## Task
-
-        1. Run `kargo login` first to authenticate
-        2. Get the latest freight for each stage separately using `infractl kargo list-freight <app-name> --project=observability --all`
-           - Each loki stage has its own freight hash (they track the same commits but have different hashes)
-           - Query each app: loki, loki-eu-south, loki-us-east-usw
-        3. Display the latest freight information for all three stages:
-           - Show the freight hash for each stage
-           - Show the git commit (should be the same across all stages)
-           - Show the commit message
-        4. Ask for confirmation before proceeding
-        5. If confirmed, promote the freight to all three stages in parallel using background tasks
-
-        ## Rules
-
-        - Always login to kargo first with `kargo login`
-        - Use `infractl kargo list-freight <app-name> --project=observability --all` to list freight for each app
-        - Each stage has a unique freight hash even when tracking the same git commit
-        - The correct command is `infractl kargo promote <app> --project=observability --freight=<hash>` (NOT --stage)
-        - The promote command requires interactive confirmation, so pipe `yes |` to auto-confirm
-        - Run all three promotions in parallel using background tasks for efficiency
-        - Use `yes | infractl kargo promote <app> --project=observability --freight=<hash>` for each stage
-        - Wait for all promotions to complete and report success/failure for each
-        - Each promotion will show which specific stage was promoted (e.g., loki-us-west-09a-core-observability)
-      '';
-
       pr-review = ''
         ---
         description: Address pull request review comments

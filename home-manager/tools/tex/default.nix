@@ -5,7 +5,7 @@
 }: {
   home = {
     packages = with pkgs; [
-      texlive.combined.scheme-medium
+      texliveMedium
     ];
   };
   programs.vim = {
